@@ -85,7 +85,7 @@ GitHubアカウントをお持ちのユーザーは、フォークボタンを�
 #### 回答の提出
 #### 提出時間超過の場合
 
-## <a name="section5"> 4. ChallengeViewerの使い方
+## <a name="section4"> 4. ChallengeViewerの使い方
 ### 4-1. ファイルの編集
 ### 4-2. Viewerの設定
 ### 4-3. テストの実行
