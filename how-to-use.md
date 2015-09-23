@@ -69,8 +69,14 @@ GitHub、Twitter、Facebookのアカウントを利用してご登録いただ�
 #### ChallengeViewer(ブラウザエディタ)での受験
 問題の「開く」ボタンをクリックすると、ChallengeViewer（ブラウザエディタ）が立ち上がります。
 
-詳細は
+ChallengeViewerの詳細の操作は[ChallengeViewerの使い方](#section4)を参考にしてください。
+
+
 #### GitHubを利用した受験
+問題によって、GitHubへのリポジトリのフォークを許可している問題もあります。  
+ChallengeViewer内の以下のボタンが表示されている場合、GitHubを使って自身の環境で問題を回答することも可能です。  
+GitHubアカウントをお持ちのユーザーは、フォークボタンをクリックしてGitHub上にリポジトリを生成して、自身の環境にチャレンジをcloneして受験をすることが出来ます。  
+
 
 詳細は[GitHubを利用した受験方法](#section5)を参考にしてください。
 
@@ -79,7 +85,7 @@ GitHub、Twitter、Facebookのアカウントを利用してご登録いただ�
 #### 回答の提出
 #### 提出時間超過の場合
 
-## 4. ChallengeViewerの使い方
+## <a name="section5"> 4. ChallengeViewerの使い方
 ### 4-1. ファイルの編集
 ### 4-2. Viewerの設定
 ### 4-3. テストの実行
