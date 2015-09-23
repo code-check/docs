@@ -76,7 +76,7 @@ ChallengeViewerの詳細の操作は[ChallengeViewerの使い方](#section4)を�
 問題によって、GitHubへのリポジトリのフォークを許可している問題もあります。  
 ChallengeViewer内の以下のボタンが表示されている場合、GitHubを使って自身の環境で問題を回答することも可能です。  
 GitHubアカウントをお持ちのユーザーは、フォークボタンをクリックしてGitHub上にリポジトリを生成して、自身の環境にチャレンジをcloneして受験をすることが出来ます。  
-
+![イメージ7](images/s7.png)
 
 詳細は[GitHubを利用した受験方法](#section5)を参考にしてください。
 
