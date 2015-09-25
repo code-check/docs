@@ -22,9 +22,6 @@ challenge.jsonはリポジトリがcodecheckのチャレンジであることを
 
 などが記述されます。
 
-> ミニマムなchallenge.jsonとしては空のJSON({})でもチャレンジは作れます。  
-> ただし、この場合はファイルの変更も追加もできないチャレンジが生成されます。
-
 challenge.jsonでは以下のキーを定義することができます。
 
 #### editable: Array[String]
@@ -58,7 +55,7 @@ test1のみユーザに公開する
 }
 ```
 
-※ README.mdはここでの指定に関わらずチャレンジのファイルセットには含まれません。(ユーザはチャレンジの開始より前からREADME.mdを参照することができます。)
+※ README.mdはここでの指定に関わらずチャレンジのファイルセットには含まれません。(ユーザはChallengeViewerでREADME.mdを参照することができます。)
 
 #### allowNewFile: Boolean
 ChallengeViewerでファイルの追加を許可するかどうかを指定します。
@@ -126,12 +123,8 @@ function fizzbuzz(n) {
 この機能を利用することで、テストが完全に動作するチャレンジを作成しつつ、その実装のみをユーザから隠蔽することができます。
 
 ## 自動テストの実行環境
-オープンソースの[env-builder](https://github.com/code-check/env-builder)というansibleスクリプトで作成されたDocker環境(ubuntu14.04)で実行されます。
-
-この環境には数多くの言語／テストフレームワークがあらかじめ含まれています。  
+各種言語／テストフレームワークがあらかじめインストールされたDocker環境(ubuntu14.04)で実行されます。
 言語やテストフレームワークは常にバージョンアップするものなので、この環境は必要に応じて随時更新されます。
-
-※ 現在対応していない言語／テストフレームワークもenb-builderの更新により対応可能となります。
 
 ## codecheck CLI
 codecheck CLIは自動テストで使用されるコマンドラインのテストランナーです。
@@ -151,12 +144,30 @@ codecheckコマンドは以下のことを行います。
 
 原理的にはあらゆるテストコマンドが実行できますが、非対応のテストフレームワークからは正しく実行件数／成功件数が取得できません。
 
-現在対応しているテストフレームワークは以下です。
+現在対応している言語／テストフレームワークは以下です。
 
-- mocha(JavaScript)
-- sbt(ScalaTest/Specs2)
-- mvn(JUnit)
-- TestUnit(Ruby)
+- Ruby
+  - RSpec
+  - TestUnit
+- Java
+  - Maven(JUnit)
+- Groovy
+  - Gradle(JUnit/Spock)
+- JavaScript(Node.js)
+  - Mocha
+- Python
+  - Nosetests
+- Scala
+  - SBT(ScalaTest/Specs2)
+- Perl
+  - Prove
+- PHP
+  - PHPUnit
+- Haskell
+  - Cabal
+- Go
+  - Go Test
+- C++
 
 テストフレームワークへの対応は随時更新されます。
 
