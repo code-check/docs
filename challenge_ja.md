@@ -32,7 +32,7 @@ challenge.jsonでは以下のキーを定義することができます。
 チャレンジから完全に取り除くファイルを指定します。  
 値の指定にはワイルドカードが使用できます。(gitの.gitignoreで使用可能なワイルドカードと同じ書式が使用できます。)
 
-#### includes: Array[Stringg]/excludes: Array[String]
+#### includes: Array[String]/excludes: Array[String]
 ユーザが参照可能なファイルを制限します。  
 値の指定にはワイルドカードが使用できます。(gitの.gitignoreで使用可能なワイルドカードと同じ書式が使用できます。)
 
