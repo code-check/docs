@@ -17,6 +17,7 @@ Click setting icon if you want to edit below settings:
 * Color theme
 * Tab key action
 * Auto Preview
+* Save Dialog
 
 
 ### 1-3. Run,Preview
