@@ -50,7 +50,7 @@ codecheckではオフィシャル問題として、それぞれのカテゴリ�
 
 |難易度|アルゴリズム|フレームワーク|API|HTML|選択・記述式|モバイル|ゲーム|
 |:-:|---|---|---|---|---|---|---|
-|とても難しい|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Recruting Application][sample-test]<br />[Login API][login-api]|||||
+|とても難しい|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]|||||
 |難しい||||||||
 |普通|[Sudoku][sudoku-medium]<br />[Rijndael][rijndael-medium]|||||||
 |簡単|[Sudoku][sudoku-easy]<br>[array(C#)][arrays]<br />[ROT13][rot13]||[SQL][sql]|||||
@@ -59,7 +59,7 @@ codecheckではオフィシャル問題として、それぞれのカテゴリ�
 [fizzbuzz]: https://github.com/code-check/fizzbuzz
 [sql]: https://github.com/code-check/challenge-sql
 [arrays]: https://github.com/code-check/challenge-arrays
-[sample-test]: https://github.com/code-check/sample-test
+[eventapp]: https://github.com/code-check/challenge-eventapp
 [login-api]: https://github.com/code-check/challenge-login-api
 [entity-framework]: https://github.com/code-check/challenge-entity-framework
 [sudoku-easy]: https://github.com/code-check/challenge-sudoku-easy
