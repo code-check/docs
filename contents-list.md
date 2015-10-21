@@ -30,7 +30,7 @@
 
 |difficulty|Algorithms|Frameworks|APIs(Server)|HTML(Frontend)|Markdown|Mobile|Game|
 |:-:|---|---|---|---|---|---|---|
-|Very Hard|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Recruting Application][sample-test]<br />[Login API][login-api]|||||
+|Very Hard|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]|||||
 |Hard||||||||
 |Normal|[Sudoku][sudoku-medium]<br />[Rijndael][rijndael-medium]|||||||
 |Easy|[Sudoku][sudoku-easy]<br>[array(C#)][arrays]<br />[ROT13][rot13]||[SQL][sql]|||||
@@ -39,7 +39,7 @@
 [fizzbuzz]: https://github.com/code-check/fizzbuzz
 [sql]: https://github.com/code-check/challenge-sql
 [arrays]: https://github.com/code-check/challenge-arrays
-[sample-test]: https://github.com/code-check/sample-test
+[eventapp]: https://github.com/code-check/challenge-eventapp
 [login-api]: https://github.com/code-check/challenge-login-api
 [entity-framework]: https://github.com/code-check/challenge-entity-framework
 [sudoku-easy]: https://github.com/code-check/challenge-sudoku-easy
