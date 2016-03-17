@@ -1,4 +1,7 @@
-*Please include following points in README.md of official challenges*
+- *Please include following points in README.md of official challenges*
+- *Please follow similar markup as much as possible*
+- [Example](https://github.com/code-check/fizzbuzz/blob/c++/README.md)
+
 ## Title 
 - Write the title of challenge with short description if applicable
 
