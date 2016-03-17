@@ -20,7 +20,7 @@ $ npm install codecheck -g
   - To run tests locally run `codecheck` command in terminal in the root folder 
   
 ### Test Results *before* solving the challenge  
-- For example
+- Initially all the tests will fail with following output
 ```
 codecheck: Finish with code 100
 codecheck: tests  : 100
@@ -29,7 +29,7 @@ codecheck: failure: 100
 ```
 
 ### Test Results *after* solving the challenge
-- For example
+- Solve the challenge to pass the tests
 ```
 codecheck: Finish with code 0
 codecheck: tests  : 100
