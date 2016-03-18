@@ -13,15 +13,6 @@
 - Include link to the files user has to edit for solving the challenge 
 - Include link to the test files 
 
-## Run Tests
-- This step will include how to run tests locally or in web editor
-- In every challenge also include how to insall codecheck as follows
-```
-$ npm install codecheck -g
-```
-- Also include the following point
-  - To run tests locally run `codecheck` command in terminal in the root folder 
-  
 ### Test Results *before* solving the challenge  
 - Initially all the tests will fail with following output
 ```
@@ -39,3 +30,15 @@ codecheck: tests  : 100
 codecheck: success: 100
 codecheck: failure: 0
 ```
+
+--- --- ---
+
+## Run Tests
+- This step will include how to run tests locally or in web editor
+- In every challenge also include how to insall codecheck as follows
+```
+$ npm install codecheck -g
+```
+- Also include the following point
+  - To run tests locally run `codecheck` command in terminal in the root folder 
+  
