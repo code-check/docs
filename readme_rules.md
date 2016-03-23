@@ -41,6 +41,13 @@ $ npm install codecheck -g
 ```
 - Also include the following point
   - To run tests locally run `codecheck` command in terminal in the root folder 
+  
+#### For example 
+- To run tests locally install `codecheck` by running the following command in terminal 
+```
+$ npm install codecheck -g
+```
+- To run tests in web editor please click in `RUN` button on left side of web editor
 
 ## Explain your code
 In [answer.md](answer.md) write a brief explanation 
