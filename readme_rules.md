@@ -14,7 +14,7 @@
 - Include link to the test files 
 
 ### Test Results *before* solving the challenge  
-- Initially all the tests will fail with following output
+Initially all the tests will fail with following output
 ```
 codecheck: Finish with code 100
 codecheck: tests  : 100
@@ -23,7 +23,7 @@ codecheck: failure: 100
 ```
 
 ### Test Results *after* solving the challenge
-- Solve the challenge to pass the tests
+Solve the challenge to pass the tests
 ```
 codecheck: Finish with code 0
 codecheck: tests  : 100
