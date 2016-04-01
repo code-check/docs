@@ -25,6 +25,6 @@
   - リポジトリや Webhook の設定情報を確認して、必要であれば修正します。
   - 設定の修正はオプトイン方式をとっています
 
-### Applicant list tab
+### Expired tab（時間切れ受験者の表示）
   - Submitted タブに Expired（時間切れ） 状態の Answer（解答） が表示される問題の修正
   - Expired状態の解答は、Expired（時間切れ）というタブ内でのみ表示されるようになりました
