@@ -32,29 +32,16 @@ HTMLチャレンジは、HTML5、CSS3などのWebデザインや、Javascriptを
 選択式チャレンジとは、4択問題や記述の問題を出題することが出来るチャレンジです。
 問題は、マークダウンファイルを編集することで作成することが出来ます。また、選択式の問題については、自動採点も設定することが可能です。
 
-
-### 6. モバイルチャレンジ
-モバイルチャレンジとは、スマートフォンアプリケーションの実装を試すことが出来るチャレンジです。
-現在以下の2つのテストの作成をサポートすることを予定しております。
-* Cordova
-* Android
-
-### 7. ゲームチャレンジ
-ゲームチャレンジとは、ゲームエンジンを活用したアプリケーションの実装をすることが出来るチャレンジです。
-現在は以下のゲームエンジンへの対応を予定しております。
-* Unity
-* cocos2dx
-
 ## サンプル問題集
 codecheckではオフィシャル問題として、それぞれのカテゴリにおいて、サンプルの問題を作成し、無償で提供しております。
 
 |難易度|アルゴリズム|フレームワーク|API|HTML|選択・記述式|モバイル|ゲーム|
 |:-:|---|---|---|---|---|---|---|
-|とても難しい|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]|||||
+|とても難しい|[数独(上級)][sudoku]<br />[ラジンダール][rijndael]|[EntityFramework][entity-framework]|[イベントアプリを作ろう][eventapp]<br />[ログインAPIを実装しよう][login-api]|||||
 |難しい||||||||
-|普通|[Sudoku][sudoku-medium]<br />[Rijndael][rijndael-medium]|||||||
-|簡単|[Sudoku][sudoku-easy]<br>[array(C#)][arrays]<br />[ROT13][rot13]||[SQL][sql]|||||
-|とても簡単|[Fizzbuzz][fizzbuzz]<br />[Binary ToString][binary-tostring]||||||||
+|普通|[数独(中級)][sudoku-medium]<br />[ラジンダール(中級)][rijndael-medium]|||||||
+|簡単|[数独(初級)][sudoku-easy]<br>[配列][arrays]<br />[暗号化(ROT13)][rot13]||[SQL][sql]|||||
+|とても簡単|[Fizzbuzz][fizzbuzz]<br />[バイナリ変換][binary-tostring]||||||||
 
 [fizzbuzz]: https://github.com/code-check/fizzbuzz
 [sql]: https://github.com/code-check/challenge-sql
