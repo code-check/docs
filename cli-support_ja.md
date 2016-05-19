@@ -80,7 +80,7 @@ challenge.jsonのcliには以下の値を指定してください。
 - [ruby](https://github.com/code-check/cli-template-ruby)
 - [go](https://github.com/code-check/cli-template-go)
 - [python](https://github.com/code-check/cli-template-python)
-- java
+- [java](https://github.com/code-check/cli-template-java)
 - php
 - c/c++
 - perl
