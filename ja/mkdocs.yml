@@ -1,0 +1,7 @@
+site_name: Codecheck Documentation
+theme: readthedocs
+
+pages:
+- Home: index.md
+- Get Started: get_started.md
+- Reference: reference.md
