@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to codecheck's documentation!\n\n\nWhat's Codecheck?\n\n\nCodeCheck is an \nawesome coding challenge platform\n.\n\n\nGet Started\n\n\n\n\nSign Up\n\n\nChoose a challenge (maybe \nthis one\n!)\n\n\nStart coding in the web editor\n\n\nOR, \nplay the challenge locally using Github\n :D\n\n\n\n\n\n\nJoin Our Community", 
+            "text": "Welcome\n\n\nWelcome to codecheck's documentation!\n\n\nWhat's Codecheck?\n\n\nCodeCheck is an \nawesome coding challenge platform\n.\n\n\nGet Started\n\n\n\n\nSign Up\n\n\nChoose a challenge (maybe \nthis one\n!)\n\n\nStart coding in the web editor\n\n\nOR, \nplay the challenge locally using Github\n :D\n\n\n\n\n\n\nJoin Our Community", 
             "title": "Welcome"
         }, 
         {
-            "location": "/#welcome-to-codechecks-documentation", 
-            "text": "", 
-            "title": "Welcome to codecheck's documentation!"
+            "location": "/#welcome", 
+            "text": "Welcome to codecheck's documentation!", 
+            "title": "Welcome"
         }, 
         {
             "location": "/#whats-codecheck", 
