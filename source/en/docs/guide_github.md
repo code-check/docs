@@ -1,22 +1,23 @@
 # Using GitHub
-You need to connect your GitHub account if you want to solve challenge by using GitHub.
-Add your GitHub account at social account setting page before you start taking Exam.
+If you want to work on codecheck challenges in your local environment, you can!  
+First you'll need a [github account](https://github.com/join).  
+Then, [connect your GitHub account](https://app.code-check.io/settings/social)  to codecheck before you start the challenge.
 
-## How to solve with GitHub
+## Solving with GitHub
 ### Fork challenge
-the modal appears when you click "Fork" button.
+This menu appears when you click the "Fork" button.
 ![イメージ11](images/s11.png)  
-Fill out repository name and click "OK" button, then you are going to jump to the generated repository page.
+Fill out the repository name and click the "OK" button, then you are going to jump to the generated repository page.  
 Check "Private Repository" if you do not want to publish the repository.
 
 ### Clone repository
 ![イメージ15](images/s15.png)   
-The way to clone is same as GitHub like below
+Clone your challenge repo with the standard `git clone`:
 
 ```
 $ git clone {GIT_URL}
 ```
-you can hack Challenges with your own environment (editor, server, etc) after clone it!
+Now, you can hack Challenges in your own local environment!
 
 ### Save answer
 Save your answer by pushing your branch to remote master.
@@ -24,7 +25,7 @@ Save your answer by pushing your branch to remote master.
 ```
 $ git push origin master
 ```
-the answer is saved at same time on codecheck server too.
-Please make sure whether the state of challenge became from "In Progress" to "Saved" in exam detail page.
+The answer is also simultaneously saved to the codecheck server.  
+Please confirm that the state of challenge changes from "In Progress" to "Saved" in the exam details page.
 
 That's it!

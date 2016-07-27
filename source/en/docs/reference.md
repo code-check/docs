@@ -1,15 +1,14 @@
-## 3. Recommend Browser
-Please choose mordan browser which is compatible with HTML5,CSS3, and Websocket.
+# Browser Recommendations
+Please choose a modern browser which is compatible with HTML5,CSS3, and Websocket.  
 Our recommend Browser is Google Chrome.
 
-# contents list
+# Contents List
 
-## Category
-### 1. Algorithm Challenge
+#### 1. Algorithm Challenges
 * Languages: C,C++,C#,Java,Javascript,Scala,PHP,Perl,Python,Ruby,Go,Haskell,Groovy
 * contents:FizzBuzz,Primary,etc.
 
-### 2. Frameworks Challenge
+#### 2. Frameworks Challenges
 
 |Language|Frameworks|
 |---|---|
@@ -21,18 +20,18 @@ Our recommend Browser is Google Chrome.
 |Javascript|Express,SailsJS,JQuery,Bootstrap,AnglarJS,ReactJS|
 |SQL|SQLite|
 
-### 3. APIs(Server) Challenge
-### 4. HTML(Frontend) Challenge
-### 5. Markdown Challenge
-### 6. Mobile Challenge
+#### 3. APIs(Server) Challenges
+#### 4. HTML(Frontend) Challenges
+#### 5. Markdown Challenges
+#### 6. Mobile Challenges
 * Cordova
 * Android
 
-### 7. Game Challenge
+#### 7. Game Challenges
 * Unity
 * cocos2dx
 
-|difficulty|Algorithms|Frameworks|APIs(Server)|HTML(Frontend)|Markdown|Mobile|Game|
+|Difficulty|Algorithm|Frameworks|APIs(Server)|HTML(Frontend)|Markdown|Mobile|Game|
 |:-:|---|---|---|---|---|---|---|
 |Very Hard|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]|||||
 |Hard||||||||

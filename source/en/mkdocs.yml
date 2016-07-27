@@ -1,8 +1,13 @@
 site_name: Codecheck Documentation
 theme: readthedocs
 
+# readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal = not elegantly responsive
+# cyborg, united, amelia, mkdocs =  does not match codecheck color scheme
+# simplex = does not match codecheck font
+# bootstrap = oh my god this bootstrap implementation is blegghghghghh
+
 pages:
 - Welcome: index.md
 - Using Github: guide_github.md
-- Using the Web Editor: guide_web_editor.md
+- Using The Web Editor: guide_web_editor.md
 - Reference: reference.md
