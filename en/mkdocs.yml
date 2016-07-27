@@ -2,6 +2,7 @@ site_name: Codecheck Documentation
 theme: readthedocs
 
 pages:
-- Home: index.md
-- Get Started: get_started.md
+- Welcome: index.md
+- Using Github: guide_github.md
+- Using the Web Editor: guide_web_editor.md
 - Reference: reference.md

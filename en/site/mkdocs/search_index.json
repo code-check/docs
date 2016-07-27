@@ -1,0 +1,174 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to codecheck's documentation!\n\n\nWhat's Codecheck?\n\n\nCodeCheck is an \nawesome coding challenge platform\n.\n\n\nGet Started\n\n\n\n\nSign Up\n\n\nChoose a challenge (maybe \nthis one\n!)\n\n\nStart coding in the web editor\n\n\nOR, \nplay the challenge locally using Github\n :D\n\n\n\n\n\n\nJoin Our Community", 
+            "title": "Welcome"
+        }, 
+        {
+            "location": "/#welcome-to-codechecks-documentation", 
+            "text": "", 
+            "title": "Welcome to codecheck's documentation!"
+        }, 
+        {
+            "location": "/#whats-codecheck", 
+            "text": "CodeCheck is an  awesome coding challenge platform .", 
+            "title": "What's Codecheck?"
+        }, 
+        {
+            "location": "/#get-started", 
+            "text": "Sign Up  Choose a challenge (maybe  this one !)  Start coding in the web editor  OR,  play the challenge locally using Github  :D", 
+            "title": "Get Started"
+        }, 
+        {
+            "location": "/#join-our-community", 
+            "text": "", 
+            "title": "Join Our Community"
+        }, 
+        {
+            "location": "/guide_github/", 
+            "text": "Using GitHub\n\n\nYou need to connect your GitHub account if you want to solve challenge by using GitHub.\nAdd your GitHub account at social account setting page before you start taking Exam.\n\n\nHow to solve with GitHub\n\n\nFork challenge\n\n\nthe modal appears when you click \"Fork\" button.\n\n\nFill out repository name and click \"OK\" button, then you are going to jump to the generated repository page.\nCheck \"Private Repository\" if you do not want to publish the repository.\n\n\nClone repository\n\n\n \n\nThe way to clone is same as GitHub like below\n\n\n$ git clone {GIT_URL}\n\n\n\n\nyou can hack Challenges with your own environment (editor, server, etc) after clone it!\n\n\nSave answer\n\n\nSave your answer by pushing your branch to remote master.\n\n\n$ git push origin master\n\n\n\n\nthe answer is saved at same time on codecheck server too.\nPlease make sure whether the state of challenge became from \"In Progress\" to \"Saved\" in exam detail page.\n\n\nThat's it!", 
+            "title": "Using Github"
+        }, 
+        {
+            "location": "/guide_github/#using-github", 
+            "text": "You need to connect your GitHub account if you want to solve challenge by using GitHub.\nAdd your GitHub account at social account setting page before you start taking Exam.", 
+            "title": "Using GitHub"
+        }, 
+        {
+            "location": "/guide_github/#how-to-solve-with-github", 
+            "text": "", 
+            "title": "How to solve with GitHub"
+        }, 
+        {
+            "location": "/guide_github/#fork-challenge", 
+            "text": "the modal appears when you click \"Fork\" button. \nFill out repository name and click \"OK\" button, then you are going to jump to the generated repository page.\nCheck \"Private Repository\" if you do not want to publish the repository.", 
+            "title": "Fork challenge"
+        }, 
+        {
+            "location": "/guide_github/#clone-repository", 
+            "text": "The way to clone is same as GitHub like below  $ git clone {GIT_URL}  you can hack Challenges with your own environment (editor, server, etc) after clone it!", 
+            "title": "Clone repository"
+        }, 
+        {
+            "location": "/guide_github/#save-answer", 
+            "text": "Save your answer by pushing your branch to remote master.  $ git push origin master  the answer is saved at same time on codecheck server too.\nPlease make sure whether the state of challenge became from \"In Progress\" to \"Saved\" in exam detail page.  That's it!", 
+            "title": "Save answer"
+        }, 
+        {
+            "location": "/guide_web_editor/", 
+            "text": "How to use Web Editor\n\n\n 1. How to use Web Editor\n\n\n1-1. Edit files\n\n\nType of files\n\n\n\nYou can see file tree on the left side of Web Editor.\n\nAnd you can make sure which file is editable or not by seeing the type of file icon.\n\nPlease follow challenge sentence and edit file which is supposed to be edited.\n\n\n1-2. Web Editor Settings\n\n\n  \n\n\nYou can edit the settings of Web Editor.\nClick setting icon if you want to edit below settings:\n\n Color theme\n\n Tab key action\n\n Auto Preview\n\n Save Dialog\n\n\n1-3. Run,Preview\n\n\nRun test\n\n\nYou can run the test by clicking the run button at lower right side of Web Editor.\n- About test code\n  - codecheck support to test by using test framework as like an Unit test.\n  - \"test\" means not Exam or challenge but test code to verify whether program is correct or not.\n  - applicants can try to run public test code.\n\n\nPreview\n\n\nPreview feature support applicants to see html view an application configured with HTML, CSS, and Javascript.\n\nyou can see latest html view automatically without reload Web Editor when the Auto Preview setting is checked.\n\n\n1-4. How to save challenge\n\n\nTo click \"SAVE\" button to save files you edited\n\n\n\nChoose file which you want to save and click \"OK\" button to save files.\n\n\n3. Recommend Browser\n\n\nPlease choose mordan browser which is compatible with HTML5,CSS3, and Websocket.\nOur recommend Browser is Google Chrome.", 
+            "title": "Using the Web Editor"
+        }, 
+        {
+            "location": "/guide_web_editor/#how-to-use-web-editor", 
+            "text": "", 
+            "title": "How to use Web Editor"
+        }, 
+        {
+            "location": "/guide_web_editor/#1-how-to-use-web-editor", 
+            "text": "", 
+            "title": " 1. How to use Web Editor"
+        }, 
+        {
+            "location": "/guide_web_editor/#1-1-edit-files", 
+            "text": "", 
+            "title": "1-1. Edit files"
+        }, 
+        {
+            "location": "/guide_web_editor/#type-of-files", 
+            "text": "You can see file tree on the left side of Web Editor. \nAnd you can make sure which file is editable or not by seeing the type of file icon. \nPlease follow challenge sentence and edit file which is supposed to be edited.", 
+            "title": "Type of files"
+        }, 
+        {
+            "location": "/guide_web_editor/#1-2-web-editor-settings", 
+            "text": "You can edit the settings of Web Editor.\nClick setting icon if you want to edit below settings:  Color theme  Tab key action  Auto Preview  Save Dialog", 
+            "title": "1-2. Web Editor Settings"
+        }, 
+        {
+            "location": "/guide_web_editor/#1-3-runpreview", 
+            "text": "", 
+            "title": "1-3. Run,Preview"
+        }, 
+        {
+            "location": "/guide_web_editor/#run-test", 
+            "text": "You can run the test by clicking the run button at lower right side of Web Editor.\n- About test code\n  - codecheck support to test by using test framework as like an Unit test.\n  - \"test\" means not Exam or challenge but test code to verify whether program is correct or not.\n  - applicants can try to run public test code.", 
+            "title": "Run test"
+        }, 
+        {
+            "location": "/guide_web_editor/#preview", 
+            "text": "Preview feature support applicants to see html view an application configured with HTML, CSS, and Javascript. \nyou can see latest html view automatically without reload Web Editor when the Auto Preview setting is checked.", 
+            "title": "Preview"
+        }, 
+        {
+            "location": "/guide_web_editor/#1-4-how-to-save-challenge", 
+            "text": "To click \"SAVE\" button to save files you edited  \nChoose file which you want to save and click \"OK\" button to save files.", 
+            "title": "1-4. How to save challenge"
+        }, 
+        {
+            "location": "/guide_web_editor/#3-recommend-browser", 
+            "text": "Please choose mordan browser which is compatible with HTML5,CSS3, and Websocket.\nOur recommend Browser is Google Chrome.", 
+            "title": "3. Recommend Browser"
+        }, 
+        {
+            "location": "/reference/", 
+            "text": "3. Recommend Browser\n\n\nPlease choose mordan browser which is compatible with HTML5,CSS3, and Websocket.\nOur recommend Browser is Google Chrome.\n\n\ncontents list\n\n\nCategory\n\n\n1. Algorithm Challenge\n\n\n\n\nLanguages: C,C++,C#,Java,Javascript,Scala,PHP,Perl,Python,Ruby,Go,Haskell,Groovy\n\n\ncontents:FizzBuzz,Primary,etc.\n\n\n\n\n2. Frameworks Challenge\n\n\n\n\n\n\n\n\nLanguage\n\n\nFrameworks\n\n\n\n\n\n\n\n\n\n\nRuby\n\n\nRubyOnRails,Sinatra\n\n\n\n\n\n\nPHP\n\n\nCakePHP,Larval,Wordpress\n\n\n\n\n\n\nPython\n\n\ndjango\n\n\n\n\n\n\nJava\n\n\nPlayFramework,Spring\n\n\n\n\n\n\nScala\n\n\nPlayFramework\n\n\n\n\n\n\nJavascript\n\n\nExpress,SailsJS,JQuery,Bootstrap,AnglarJS,ReactJS\n\n\n\n\n\n\nSQL\n\n\nSQLite\n\n\n\n\n\n\n\n\n3. APIs(Server) Challenge\n\n\n4. HTML(Frontend) Challenge\n\n\n5. Markdown Challenge\n\n\n6. Mobile Challenge\n\n\n\n\nCordova\n\n\nAndroid\n\n\n\n\n7. Game Challenge\n\n\n\n\nUnity\n\n\ncocos2dx\n\n\n\n\n\n\n\n\n\n\ndifficulty\n\n\nAlgorithms\n\n\nFrameworks\n\n\nAPIs(Server)\n\n\nHTML(Frontend)\n\n\nMarkdown\n\n\nMobile\n\n\nGame\n\n\n\n\n\n\n\n\n\n\nVery Hard\n\n\nSudoku\nRijndael\n\n\nEntityFramework\n\n\nEvent Application\nLogin API\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNormal\n\n\nSudoku\nRijndael\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEasy\n\n\nSudoku\narray(C#)\nROT13\n\n\nSQL\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVery Easy\n\n\nFizzbuzz\nBinary ToString\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAccess Rights\n\n\n\n\n\n\n\n\n\n\nOwner\n\n\nAdmin\n\n\nRegular\n\n\nSupporter\n\n\n\n\n\n\n\n\n\n\nSee applicants,answer\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\n\n\n\nJudge answer\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\n\n\n\nCreate Challenge\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n\n\n\n\nModify Organization Challenge\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n-\n\n\n\n\n\n\nCreate Exam\n\n\n\u25ef\n\n\n\u25ef\n\n\n\u25ef\n\n\n-\n\n\n\n\n\n\nInvite,Remove member\n\n\n\u25ef\n\n\n\u25ef\n\n\n-\n\n\n-\n\n\n\n\n\n\nChange member's role\n\n\n\u25ef\n\n\n\u25ef\n\n\n-\n\n\n-\n\n\n\n\n\n\nEdit company profile\n\n\n\u25ef\n\n\n\u25ef\n\n\n-\n\n\n-", 
+            "title": "Reference"
+        }, 
+        {
+            "location": "/reference/#3-recommend-browser", 
+            "text": "Please choose mordan browser which is compatible with HTML5,CSS3, and Websocket.\nOur recommend Browser is Google Chrome.", 
+            "title": "3. Recommend Browser"
+        }, 
+        {
+            "location": "/reference/#contents-list", 
+            "text": "", 
+            "title": "contents list"
+        }, 
+        {
+            "location": "/reference/#category", 
+            "text": "", 
+            "title": "Category"
+        }, 
+        {
+            "location": "/reference/#1-algorithm-challenge", 
+            "text": "Languages: C,C++,C#,Java,Javascript,Scala,PHP,Perl,Python,Ruby,Go,Haskell,Groovy  contents:FizzBuzz,Primary,etc.", 
+            "title": "1. Algorithm Challenge"
+        }, 
+        {
+            "location": "/reference/#2-frameworks-challenge", 
+            "text": "Language  Frameworks      Ruby  RubyOnRails,Sinatra    PHP  CakePHP,Larval,Wordpress    Python  django    Java  PlayFramework,Spring    Scala  PlayFramework    Javascript  Express,SailsJS,JQuery,Bootstrap,AnglarJS,ReactJS    SQL  SQLite", 
+            "title": "2. Frameworks Challenge"
+        }, 
+        {
+            "location": "/reference/#3-apisserver-challenge", 
+            "text": "", 
+            "title": "3. APIs(Server) Challenge"
+        }, 
+        {
+            "location": "/reference/#4-htmlfrontend-challenge", 
+            "text": "", 
+            "title": "4. HTML(Frontend) Challenge"
+        }, 
+        {
+            "location": "/reference/#5-markdown-challenge", 
+            "text": "", 
+            "title": "5. Markdown Challenge"
+        }, 
+        {
+            "location": "/reference/#6-mobile-challenge", 
+            "text": "Cordova  Android", 
+            "title": "6. Mobile Challenge"
+        }, 
+        {
+            "location": "/reference/#7-game-challenge", 
+            "text": "Unity  cocos2dx      difficulty  Algorithms  Frameworks  APIs(Server)  HTML(Frontend)  Markdown  Mobile  Game      Very Hard  Sudoku Rijndael  EntityFramework  Event Application Login API        Hard           Normal  Sudoku Rijndael          Easy  Sudoku array(C#) ROT13  SQL         Very Easy  Fizzbuzz Binary ToString", 
+            "title": "7. Game Challenge"
+        }, 
+        {
+            "location": "/reference/#access-rights", 
+            "text": "Owner  Admin  Regular  Supporter      See applicants,answer  \u25ef  \u25ef  \u25ef  \u25ef    Judge answer  \u25ef  \u25ef  \u25ef  \u25ef    Create Challenge  \u25ef  \u25ef  \u25ef  \u25ef    Modify Organization Challenge  \u25ef  \u25ef  \u25ef  -    Create Exam  \u25ef  \u25ef  \u25ef  -    Invite,Remove member  \u25ef  \u25ef  -  -    Change member's role  \u25ef  \u25ef  -  -    Edit company profile  \u25ef  \u25ef  -  -", 
+            "title": "Access Rights"
+        }
+    ]
+}

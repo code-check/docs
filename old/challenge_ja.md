@@ -55,15 +55,15 @@ test1のみユーザに公開する
 }
 ```
 
-※ README.mdはここでの指定に関わらずチャレンジのファイルセットには含まれません。(ユーザはChallengeViewerでREADME.mdを参照することができます。)
+※ README.mdはここでの指定に関わらずチャレンジのファイルセットには含まれません。(ユーザはWeb EditorでREADME.mdを参照することができます。)
 
 #### allowNewFile: Boolean
 デフォルト値：false  
-ChallengeViewerでファイルの追加を許可するかどうかを指定します。
+Web Editorでファイルの追加を許可するかどうかを指定します。
 
 #### allowRunTest: Boolean
 デフォルト値：true  
-ChallengeViewerでテストの実行を許可するかどうかを指定します。
+Web Editorでテストの実行を許可するかどうかを指定します。
 
 #### test: String
 テストに使用するコマンドを指定します。  
