@@ -1,7 +1,7 @@
 # Using GitHub
 If you want to work on codecheck challenges in your local environment, you can!  
 First you'll need a [github account](https://github.com/join).  
-Then, [connect your GitHub account](https://app.code-check.io/settings/social)  to codecheck before you start the challenge.
+Then, [connect your GitHub account](https://app.code-check.io/settings/social) to codecheck before you start the challenge.
 
 ## Solving with GitHub
 ### Fork challenge

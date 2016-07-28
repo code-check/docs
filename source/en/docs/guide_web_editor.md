@@ -1,7 +1,7 @@
-
 #  Using The Web Editor
 
 ## Edit files
+
 ### Filetypes
 ![イメージ10](images/s10.png)  
 You can see the file tree on the left side of the Web Editor.  
@@ -10,7 +10,6 @@ Follow the instructions in the challenge's README.md and work in the specified f
 
 ### Web Editor Settings
 ![イメージ9](images/s9.png)  
-
 The Web Editor has a few settings you can fiddle with.  
 Click the setting icon if you want to change:
 * Color theme
@@ -21,6 +20,7 @@ Click the setting icon if you want to change:
 ## Execution
 ### Run test
 You can run the tests by clicking the run button in the lower right corner of the Web Editor.
+
 - About the test code
   - Codecheck support test by using test framework as like an Unit test.
   - "Test" does not mean Exam or challenge, but test code to verify whether your program is correct or not.  
@@ -35,6 +35,5 @@ Click the "SAVE" button to save the files you edited.
 ![イメージ13](images/s13.png)  
 Choose the files that you want to save and click the "OK" button to save files.
 
-### Browser Recommendations
-Please choose a modern browser which is compatible with HTML5,CSS3, and Websocket.  
-Our recommend Browser is Google Chrome.
+### About Browsers
+See our [browser recommendations](reference.md).

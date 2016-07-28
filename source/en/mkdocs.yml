@@ -1,6 +1,7 @@
 site_name: Codecheck Documentation
 theme: readthedocs
 
+# Choices remaining: readthedocs, yeti, journal
 # readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal = not elegantly responsive
 # cyborg, united, amelia, mkdocs =  does not match codecheck color scheme
 # simplex = does not match codecheck font
@@ -10,4 +11,5 @@ pages:
 - Welcome: index.md
 - Using Github: guide_github.md
 - Using The Web Editor: guide_web_editor.md
+- Organizing Challenges: guide_organizing_challenges.md
 - Reference: reference.md

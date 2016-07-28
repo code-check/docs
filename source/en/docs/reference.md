@@ -2,7 +2,7 @@
 Please choose a modern browser which is compatible with HTML5,CSS3, and Websocket.  
 Our recommend Browser is Google Chrome.
 
-# Contents List
+# Sample Contents List
 
 #### 1. Algorithm Challenges
 * Languages: C,C++,C#,Java,Javascript,Scala,PHP,Perl,Python,Ruby,Go,Haskell,Groovy

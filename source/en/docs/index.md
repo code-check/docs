@@ -10,10 +10,13 @@ CodeCheck is an [awesome coding challenge platform](http://code-check.io).
 
 * [Sign Up](https://app.code-check.io/auth/signup)
 * Choose a challenge (maybe [this one](https://app.code-check.io/orgs/codecheck_official/challenges/110)!)
-* Start coding in the web editor
-* OR, [play the challenge locally using Github](guide_github.md) :D
+* Start coding in the web editor:
+
 
 ![start_challenge_web_editor](images/start_challenge_web_editor.gif)
+
+
+* OR, [play the challenge locally using Github](guide_github.md) :D
 
 ### Join Our Community
 
