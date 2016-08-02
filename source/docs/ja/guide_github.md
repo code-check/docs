@@ -1,29 +1,54 @@
 # GitHubを利用した受験方法
-なんと、Codecheckはローカル環境でチャレンジに挑戦出来るんだぞ。  
-まず[Githubアカウント](https://github.com/join)が必要だな。  
-そして、GitHubアカウントを[codecheckに接続](https://app.code-check.io/settings/social)してね。  
+なんとCodecheckは他のサービスには真似できない、  
+ローカル環境でチャレンジに挑戦することが出来るんだぞ。  
 
-## GitHubを使ってチャレンジを回答する
-### チャレンジのフォーク
-Webエディタ内のフォークボタンをクリックすると、モーダルが立ち上がります。  
-![イメージ11](images/s11.png)  
-リポジトリ名を指定して、OKを選択すると、GitHubの生成されたリポジトリページに移動します。  
-もし、外部に公開しないプライベートリポジトリ（※GitHub上での有料プランが必要）を希望する場合は、Private Reopositoryボタンをチェックしてください。
+## 必須条件
+- <a href="https://github.com/join" target="_blank">Githubアカウント</a>
+- <a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方・ドキュは[ここ](https://git-scm.com/book/ja/v2)。)  
+- <a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a>
+- <a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントをcodecheck.ioに接続</a>  
+- 最後に `npm install codecheck` ってCLIで唱えて  
+codecheck CLI を召喚しておいてね。
 
-### ローカルへのクローン
-![イメージ15](images/s15.png)  
-生成されたリポジトリをローカルにクローンします。  
-これは通常のGitHubのクローンと同様です。
-```
-$ git clone {GIT_URL}
-```
-で、ローカルにリポジトリを落としてきます。  
-これであとはお好きな環境、エディタで編集をしていただくことが出来ます。
+## セットアップ
 
-### 回答の保存
-回答を編集したら、コミットをしてリモートのmasterにプッシュします。　　
-無事にリモートのmasterにプッシュが完了すると、codecheck側にもmasterの編集内容が同時保存されます。
+![Githubでローカルにチャレンジをセットアップする方法](images/start_challenge_github.gif)
+
+- **必須条件は確実に満たしておいてね**。
+- 開始したチャレンジのページから![GitHubで解くボタン](images/open_github.png)を選択する。
+- リポジトリ名を指定して、OKを選択。
+- リンクをクリックしてGitHubの生成されたリポジトリページへ移動。
+- 「Clone or Download」からリンクをコピー。
+- CLIから`git clone {レポジトリのリンク}`で、ローカルにリポジトリを落としてきます。  
+- あとは好きな環境、エディタで編集して、チャレンジをぶっつぶしてね！
+
+## テストの実行
+- テストする心の準備ができたら、  
+CLIで`codecheck`コマンドを走らせるぞ。
+- そしたらテスト結果が以下のように標準出力されます:  
 ```
-$ git push origin master
+$ codecheck
+codecheck version 0.5.3
+chai@2.3.0 node_modules/chai
+├── assertion-error@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+Finish build: npm install (1966ms)
+////////////////
+テストファイルの実行結果
+////////////////
+codecheck: Finish with code 9
+codecheck: tests  : 9
+codecheck: success: 0
+codecheck: failure: 9
 ```
-を実行した後に、試験の詳細画面でチャレンジが「保存」に切り替わったか確認をしてください。
+
+## チャレンジの保存
+- 回答を編集したら、masterにコミットしておいてね。（やり方は[gitのドキュ](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E8%A8%98%E9%8C%B2)で）
+- 次に`git push origin master`でリモートのmasterにプッシュ。　
+- 無事プッシュが完了すると、codecheck側にもmasterの編集内容が同時保存される。  
+- プッシュ後に、試験の詳細画面でチャレンジが「保存」に切り替わったか確認をしてね。
+
+## チャレンジの提出
+- 準備ができたら上記の手順で回答を保存しとく。
+- 開始したチャレンジのページにある![提出](images/submit.png)ボタンをポチッと押す。
+- 終わり！イェーイ！
