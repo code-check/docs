@@ -15,7 +15,7 @@ codecheck CLI を召喚しておいてね。
 ![Githubでローカルにチャレンジをセットアップする方法](images/start_challenge_github.gif)
 
 - **必須条件は確実に満たしておいてね**。
-- 開始したチャレンジのページから![GitHubで解くボタン](images/open_github.png)を選択する。
+- 開始したチャレンジのページから![GitHubで解くボタン](images/open_github.png)を選択。
 - リポジトリ名を指定して、OKを選択。
 - リンクをクリックしてGitHubの生成されたリポジトリページへ移動。
 - 「Clone or Download」からリンクをコピー。
@@ -25,7 +25,7 @@ codecheck CLI を召喚しておいてね。
 ## テストの実行
 - テストする心の準備ができたら、  
 CLIで`codecheck`コマンドを走らせるぞ。
-- そしたらテスト結果が以下のように標準出力されます:  
+- そしたらテスト結果が以下のように標準出力されるよ:  
 ```
 $ codecheck
 codecheck version 0.5.3

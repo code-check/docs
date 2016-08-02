@@ -10,12 +10,6 @@ you can!
 "https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.
 - Finally, chant `npm install codecheck` in the CLI to summon codecheck.
 
-<!-- - First you'll need a [GitHub account](https://github.com/join).
-- And of course [Git](https://git-scm.com/).(If you don't know git, see [this](https://try.github.io/) and [this](https://git-scm.com/doc).)  
-- Then, [connect your GitHub account](https://app.code-check.io/settings/social) to code-check.io.
-- Also, get [nodejs/npm](https://nodejs.org/en/download/)
-- And finally, chant `npm install codecheck` in the CLI to summon codecheck. -->
-
 ## Setup
 
 ![Setting up your challenge locally with GitHub](images/start_challenge_github.gif)
