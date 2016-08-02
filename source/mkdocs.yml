@@ -1,5 +1,7 @@
 site_name: Codecheck Documentation
 theme: readthedocs
+use_directory_urls: true
+google_analytics: ['UA-73275567-3', 'auto']
 
 # Choices remaining: readthedocs, yeti, journal
 # readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal = not elegantly responsive

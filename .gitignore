@@ -7,3 +7,6 @@
 
 # You too, Windows!
 *.ini
+
+# Prevent redundant built pages from unnecessarily being added
+source/site/*
