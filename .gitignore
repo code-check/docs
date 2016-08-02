@@ -1,0 +1,9 @@
+# This repo serves static pages via github pages, so no python executables are necessary.
+*.py
+*.pyc
+
+# OS X needs to shut its mouth
+*.DS_Store
+
+# You too, Windows!
+*.ini
