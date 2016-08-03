@@ -34,6 +34,16 @@
   <script src="../../js/theme.js"></script>
 
 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-73275567-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -76,7 +86,15 @@
 
                 <li class="toctree-l3"><a href="#github">GitHubを利用した受験方法</a></li>
 
-                    <li><a class="toctree-l4" href="#github_1">GitHubを使ってチャレンジを回答する</a></li>
+                    <li><a class="toctree-l4" href="#_1">必須条件</a></li>
+
+                    <li><a class="toctree-l4" href="#_2">セットアップ</a></li>
+
+                    <li><a class="toctree-l4" href="#_3">テストの実行</a></li>
+
+                    <li><a class="toctree-l4" href="#_4">チャレンジの保存</a></li>
+
+                    <li><a class="toctree-l4" href="#_5">チャレンジの提出</a></li>
 
 
             </ul>
@@ -131,31 +149,62 @@
             <div class="section">
 
                 <h1 id="github">GitHubを利用した受験方法</h1>
-<p>なんと、Codecheckはローカル環境でチャレンジに挑戦出来るんだぞ。<br />
-まず<a href="https://github.com/join">Githubアカウント</a>が必要だな。<br />
-そして、GitHubアカウントを<a href="https://app.code-check.io/settings/social">codecheckに接続</a>してね。  </p>
-<h2 id="github_1">GitHubを使ってチャレンジを回答する</h2>
-<h3 id="_1">チャレンジのフォーク</h3>
-<p>Webエディタ内のフォークボタンをクリックすると、モーダルが立ち上がります。<br />
-<img alt="イメージ11" src="../images/s11.png" /><br />
-リポジトリ名を指定して、OKを選択すると、GitHubの生成されたリポジトリページに移動します。<br />
-もし、外部に公開しないプライベートリポジトリ（※GitHub上での有料プランが必要）を希望する場合は、Private Reopositoryボタンをチェックしてください。</p>
-<h3 id="_2">ローカルへのクローン</h3>
-<p><img alt="イメージ15" src="../images/s15.png" /><br />
-生成されたリポジトリをローカルにクローンします。<br />
-これは通常のGitHubのクローンと同様です。</p>
-<pre><code>$ git clone {GIT_URL}
+<p>なんとCodecheckは他のサービスには真似できない、<br />
+ローカル環境でチャレンジに挑戦することが出来るんだぞ。  </p>
+<h2 id="_1">必須条件</h2>
+<ul>
+<li><a href="https://github.com/join" target="_blank">Githubアカウント</a></li>
+<li><a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方・ドキュは<a href="https://git-scm.com/book/ja/v2">ここ</a>。)  </li>
+<li><a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a></li>
+<li><a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントをcodecheck.ioに接続</a>  </li>
+<li>最後に <code>npm install codecheck</code> ってCLIで唱えて<br />
+codecheck CLI を召喚しておいてね。</li>
+</ul>
+<h2 id="_2">セットアップ</h2>
+<p><img alt="Githubでローカルにチャレンジをセットアップする方法" src="../images/start_challenge_github.gif" /></p>
+<ul>
+<li><strong>必須条件は確実に満たしておいてね</strong>。</li>
+<li>開始したチャレンジのページから<img alt="GitHubで解くボタン" src="../images/open_github.png" />を選択。</li>
+<li>リポジトリ名を指定して、OKを選択。</li>
+<li>リンクをクリックしてGitHubの生成されたリポジトリページへ移動。</li>
+<li>「Clone or Download」からリンクをコピー。</li>
+<li>CLIから<code>git clone {レポジトリのリンク}</code>で、ローカルにリポジトリを落としてきます。  </li>
+<li>あとは好きな環境、エディタで編集して、チャレンジをぶっつぶしてね！</li>
+</ul>
+<h2 id="_3">テストの実行</h2>
+<ul>
+<li>テストする心の準備ができたら、<br />
+CLIで<code>codecheck</code>コマンドを走らせるぞ。</li>
+<li>そしたらテスト結果が以下のように標準出力されるよ:  </li>
+</ul>
+<pre><code>$ codecheck
+codecheck version 0.5.3
+chai@2.3.0 node_modules/chai
+├── assertion-error@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+Finish build: npm install (1966ms)
+////////////////
+テストファイルの実行結果
+////////////////
+codecheck: Finish with code 9
+codecheck: tests  : 9
+codecheck: success: 0
+codecheck: failure: 9
 </code></pre>
 
-<p>で、ローカルにリポジトリを落としてきます。<br />
-これであとはお好きな環境、エディタで編集をしていただくことが出来ます。</p>
-<h3 id="_3">回答の保存</h3>
-<p>回答を編集したら、コミットをしてリモートのmasterにプッシュします。　　
-無事にリモートのmasterにプッシュが完了すると、codecheck側にもmasterの編集内容が同時保存されます。</p>
-<pre><code>$ git push origin master
-</code></pre>
-
-<p>を実行した後に、試験の詳細画面でチャレンジが「保存」に切り替わったか確認をしてください。</p>
+<h2 id="_4">チャレンジの保存</h2>
+<ul>
+<li>回答を編集したら、masterにコミットしておいてね。（やり方は<a href="https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E8%A8%98%E9%8C%B2">gitのドキュ</a>で）</li>
+<li>次に<code>git push origin master</code>でリモートのmasterにプッシュ。　</li>
+<li>無事プッシュが完了すると、codecheck側にもmasterの編集内容が同時保存される。  </li>
+<li>プッシュ後に、試験の詳細画面でチャレンジが「保存」に切り替わったか確認をしてね。</li>
+</ul>
+<h2 id="_5">チャレンジの提出</h2>
+<ul>
+<li>準備ができたら上記の手順で回答を保存しとく。</li>
+<li>開始したチャレンジのページにある<img alt="提出" src="../images/submit.png" />ボタンをポチッと押す。</li>
+<li>終わり！イェーイ！</li>
+</ul>
 
             </div>
           </div>

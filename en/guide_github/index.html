@@ -34,6 +34,16 @@
   <script src="../../js/theme.js"></script>
 
 
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-73275567-3', 'auto');
+      ga('send', 'pageview');
+  </script>
+
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -76,7 +86,15 @@
 
                 <li class="toctree-l3"><a href="#using-github">Using GitHub</a></li>
 
-                    <li><a class="toctree-l4" href="#solving-with-github">Solving with GitHub</a></li>
+                    <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
+
+                    <li><a class="toctree-l4" href="#setup">Setup</a></li>
+
+                    <li><a class="toctree-l4" href="#running-the-tests">Running the Tests</a></li>
+
+                    <li><a class="toctree-l4" href="#saving-your-solution">Saving your Solution</a></li>
+
+                    <li><a class="toctree-l4" href="#submitting-your-solution">Submitting your Solution</a></li>
 
 
             </ul>
@@ -104,7 +122,7 @@
 
     </li>
 <li>
-          
+
         </ul>
       </div>
       &nbsp;
@@ -138,30 +156,61 @@
             <div class="section">
 
                 <h1 id="using-github">Using GitHub</h1>
-<p>If you want to work on codecheck challenges in your local environment, you can!<br />
-First you'll need a <a href="https://github.com/join">github account</a>.<br />
-Then, <a href="https://app.code-check.io/settings/social">connect your GitHub account</a> to codecheck before you start the challenge.</p>
-<h2 id="solving-with-github">Solving with GitHub</h2>
-<h3 id="fork-challenge">Fork challenge</h3>
-<p>This menu appears when you click the "Fork" button.
-<img alt="イメージ11" src="../images/s11.png" /><br />
-Fill out the repository name and click the "OK" button, then you are going to jump to the generated repository page.<br />
-Check "Private Repository" if you do not want to publish the repository.</p>
-<h3 id="clone-repository">Clone repository</h3>
-<p><img alt="イメージ15" src="../images/s15.png" /> <br />
-Clone your challenge repo with the standard <code>git clone</code>:</p>
-<pre><code>$ git clone {GIT_URL}
+<p>Unlike other platforms, if you want to work on codecheck challenges in your local environment,<br />
+you can!  </p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li><a href="https://github.com/join" target="_blank"> GitHub account</a></li>
+<li><a href="https://git-scm.com/" target="_blank">Git</a> (If you don't know Git, see <a href="https://try.github.io/" target="_blank">this</a> and <a href="https://git-scm.com/doc" target="_blank">this</a>.)</li>
+<li><a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a></li>
+<li><a href=
+"https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.</li>
+<li>Finally, chant <code>npm install codecheck</code> in the CLI to summon codecheck.</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p><img alt="Setting up your challenge locally with GitHub" src="../images/start_challenge_github.gif" /></p>
+<ul>
+<li><strong>Complete all requirements</strong>.</li>
+<li>Click the <img alt="Fork to / Open with GitHub" src="../images/open_github.png" /> Button.</li>
+<li>Fill out the repository name and click the "OK" button.</li>
+<li>Click the link to jump to the generated GitHub repository page.</li>
+<li>Copy the repo link from the "Clone or Download" menu.</li>
+<li>Go to your CLI and <code>git clone {REPO NAME}</code> to copy the repository to your local directory.</li>
+<li>Now, just launch your favorite IDE/editor and crush that challenge!</li>
+</ul>
+<h2 id="running-the-tests">Running the Tests</h2>
+<ul>
+<li>Once you're ready to test your code, run <code>codecheck</code> from your CLI.</li>
+<li>The test results will print to stdout like this:</li>
+</ul>
+<pre><code>$ codecheck
+codecheck version 0.5.3
+chai@2.3.0 node_modules/chai
+├── assertion-error@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+Finish build: npm install (1966ms)
+////////////////
+Output from the test executable
+////////////////
+codecheck: Finish with code 9
+codecheck: tests  : 9
+codecheck: success: 0
+codecheck: failure: 9
 </code></pre>
 
-<p>Now, you can hack Challenges in your own local environment!</p>
-<h3 id="save-answer">Save answer</h3>
-<p>Save your answer by pushing your branch to remote master.</p>
-<pre><code>$ git push origin master
-</code></pre>
-
-<p>The answer is also simultaneously saved to the codecheck server.<br />
-Please confirm that the state of challenge changes from "In Progress" to "Saved" in the exam details page.</p>
-<p>That's it!</p>
+<h2 id="saving-your-solution">Saving your Solution</h2>
+<ul>
+<li>Commit your changes to master (See the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">git docs</a> if necessary).</li>
+<li>Save your answer by pushing to remote master with <code>git push origin master</code>.</li>
+<li>If successful, your answer is also simultaneously saved to the codecheck server.  </li>
+<li>Confirm that the status of the challenge changes from "In Progress" to "Saved" in the challenge details page.</li>
+</ul>
+<h2 id="submitting-your-solution">Submitting your Solution</h2>
+<ul>
+<li>Once you're ready to submit, save your changes following the above instructions.</li>
+<li>Go to the challenge details page and click <img alt="submit" src="../images/submit.png" />.</li>
+<li>You're done! Yaaay!</li>
+</ul>
 
             </div>
           </div>
