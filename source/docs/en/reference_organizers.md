@@ -1,14 +1,12 @@
-# Browser Recommendations
-Please choose a modern browser which is compatible with HTML5,CSS3, and Websocket.  
-Our recommend Browser is Google Chrome.
+# Reference
 
-# Sample Contents List
+## Sample Challenges List
 
-#### 1. Algorithm Challenges
-* Languages: C,C++,C#,Java,Javascript,Scala,PHP,Perl,Python,Ruby,Go,Haskell,Groovy
-* contents:FizzBuzz,Primary,etc.
+##### Algorithm Challenges
+- Languages: C, C++, C#, Java, Javascript, Scala, PHP, Perl, Python, Ruby, Go, Haskell, Groovy
+- Contents: FizzBuzz, Primary, etc.
 
-#### 2. Frameworks Challenges
+##### Framework Challenges
 
 |Language|Frameworks|
 |---|---|
@@ -20,24 +18,19 @@ Our recommend Browser is Google Chrome.
 |Javascript|Express,SailsJS,JQuery,Bootstrap,AnglarJS,ReactJS|
 |SQL|SQLite|
 
-#### 3. APIs(Server) Challenges
-#### 4. HTML(Frontend) Challenges
-#### 5. Markdown Challenges
-#### 6. Mobile Challenges
-* Cordova
-* Android
+##### API(Server) Challenges
+##### HTML(Frontend) Challenges
+##### Markdown Challenges
+##### Game Challenges
+- Unity
 
-#### 7. Game Challenges
-* Unity
-* cocos2dx
-
-|Difficulty|Algorithm|Frameworks|APIs(Server)|HTML(Frontend)|Markdown|Mobile|Game|
-|:-:|---|---|---|---|---|---|---|
-|Very Hard|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]|||||
-|Hard||||||||
-|Normal|[Sudoku][sudoku-medium]<br />[Rijndael][rijndael-medium]|||||||
-|Easy|[Sudoku][sudoku-easy]<br>[array(C#)][arrays]<br />[ROT13][rot13]||[SQL][sql]|||||
-|Very Easy|[Fizzbuzz][fizzbuzz]<br />[Binary ToString][binary-tostring]||||||||
+|Difficulty|Algorithm|Frameworks|APIs(Server)|HTML(Frontend)|Mobile|Game|
+|:-:|---|---|---|---|---|---|
+|Very Hard|[Sudoku][sudoku]<br />[Rijndael][rijndael]|[EntityFramework][entity-framework]|[Event Application][eventapp]<br />[Login API][login-api]||||
+|Hard|||||||
+|Normal|[Sudoku][sudoku-medium]<br />[Rijndael][rijndael-medium]||||||
+|Easy|[Sudoku][sudoku-easy]<br>[array(C#)][arrays]<br />[ROT13][rot13]||[SQL][sql]||||
+|Very Easy|[Fizzbuzz][fizzbuzz]<br />[Binary ToString][binary-tostring]|||||||
 
 [fizzbuzz]: https://github.com/code-check/fizzbuzz
 [sql]: https://github.com/code-check/challenge-sql
@@ -53,8 +46,7 @@ Our recommend Browser is Google Chrome.
 [binary-tostring]: https://github.com/code-check/challenge-binary-tostring
 [rot13]: https://github.com/code-check/challenge-rot13
 
-
-# Access Rights
+## Access Rights
 
 ||Owner|Admin|Regular|Supporter|
 |---|:-:|:-:|:-:|:-:|

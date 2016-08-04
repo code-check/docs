@@ -36,4 +36,4 @@ Click the "SAVE" button to save the files you edited.
 Choose the files that you want to save and click the "OK" button to save files.
 
 ### About Browsers
-See our [browser recommendations](reference.md).
+See our [browser recommendations](reference_users.md).
