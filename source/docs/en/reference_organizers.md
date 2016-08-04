@@ -21,13 +21,8 @@
 ##### API(Server) Challenges
 ##### HTML(Frontend) Challenges
 ##### Markdown Challenges
-##### Mobile Challenges
-- Cordova
-- Android
-
 ##### Game Challenges
 - Unity
-- cocos2dx
 
 |Difficulty|Algorithm|Frameworks|APIs(Server)|HTML(Frontend)|Mobile|Game|
 |:-:|---|---|---|---|---|---|
