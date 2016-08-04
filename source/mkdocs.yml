@@ -14,10 +14,12 @@ pages:
 - Welcome: en/index.md
 - Using Github: en/guide_github.md
 - Using The Web Editor: en/guide_web_editor.md
-- Organizing Challenges: en/guide_organizing_challenges.md
-- Reference: en/reference.md
+# - Organizing Challenges: en/guide_organizing_challenges.md
+- Reference: en/reference_users.md
+# - Organizer Reference: en/reference_organizers.md
 - はじめに: ja/index.md
 - Webエディタの使用方法: ja/guide_web_editor.md
 - Githubの使用方法: ja/guide_github.md
 - チャレンジの運営: ja/guide_organizing_challenges.md
-- リファレンス: ja/reference.md
+- リファレンス: ja/reference_users.md
+# - 運営者リファレンス: ja/reference_organizers.md
