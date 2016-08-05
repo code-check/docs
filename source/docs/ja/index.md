@@ -1,9 +1,9 @@
 # ようこそ
-codecheckのドキュメンテーションにようこそ！
+Codecheckのドキュメンテーションにようこそ！
 
 ## Codecheckって?
 
-CodeCheckは[すごいプログラミングチャレンジのサービス](https://app.code-check.io/openchallenges)だよ
+Codecheckは[すごいプログラミングチャレンジのサービス](https://app.code-check.io/openchallenges)だよ
 
 ## はじめの一歩
 
