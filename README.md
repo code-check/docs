@@ -25,7 +25,7 @@ If you want to work on the site, you will want to install and run a local dev co
 ## Instructions
 
 - All of the source files are located in `/source`.  
-- You can `mkdocs serve` to work on the site.  
+- You can `mkdocs serve` to run and view the site locally.  
 - When you want to generate the static pages:
  - First, go to `/source` and `mkdocs build`.
  - The static pages will be generated into `/source/site`.
