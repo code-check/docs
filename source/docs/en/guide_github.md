@@ -9,6 +9,7 @@ you can!
 - <a href=
 "https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.
 - Finally, chant `npm install codecheck` in the CLI to summon codecheck.
+- Also: Any other dependencies specified in the challenge's README.md
 
 ## Setup
 

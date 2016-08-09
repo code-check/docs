@@ -7,8 +7,8 @@
 - <a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方・ドキュは[ここ](https://git-scm.com/book/ja/v2)。)  
 - <a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a>
 - <a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントをcodecheck.ioに接続</a>  
-- 最後に `npm install codecheck` ってCLIで唱えて  
-codecheck CLI を召喚しておいてね。
+- 最後に `npm install codecheck -g` ってCLIで唱えてcodecheck CLI を召喚しておいてね。
+- あとチャレンジのREADME.mdに他のツールが記載してあったらそれもお願いね。
 
 ## セットアップ
 
