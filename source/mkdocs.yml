@@ -1,13 +1,14 @@
 site_name: Codecheck Documentation
 theme: readthedocs
 use_directory_urls: true
+# When we use multiple trackers, add other trackers post-compilation.
 google_analytics: ['UA-73275567-3', 'auto']
 
-# Choices remaining: readthedocs, yeti, journal
-# readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal = not elegantly responsive
-# cyborg, united, amelia, mkdocs =  does not match codecheck color scheme
-# simplex = does not match codecheck font
-# bootstrap = oh my god this bootstrap implementation is blegghghghghh
+# Good themes: readthedocs, yeti, journal
+# Not elegantly responsive: readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal
+# Color does not match codecheck: cyborg, united, amelia, mkdocs
+# Font does not match codecheck: simplex
+# Bleh in general: bootstrap
 
 pages:
 - "": index.md

@@ -9,8 +9,8 @@ We recommend Google Chrome.
 When you run tests in our web editor or you submit your answer, we evaluate your code with the below versions of languages and tools.  
 If you're seeing inconsistencies in the test results being run in your local environment and the results displayed on code-check.io, check to see if you are using the exact same dependency versions as our servers.
 
-##### Codecheck CLI  
-- Codecheck v0.5.8
+##### codecheck CLI  
+- codecheck v0.5.8
 
 ##### Languages
 - NodeJS v4.4.7

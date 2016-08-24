@@ -1,5 +1,5 @@
 # GitHubを利用した受験方法
-なんとCodecheckは他のサービスには真似できない、  
+なんとcodecheckは他のサービスには真似できない、  
 ローカル環境でチャレンジに挑戦することが出来るんだぞ。  
 
 ## 必須条件
@@ -8,7 +8,7 @@
 - <a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a>
 - <a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントをcodecheck.ioに接続</a>  
 - 最後に `npm install codecheck -g` ってCLIで唱えてcodecheck CLI を召喚しておいてね。
-- あとチャレンジのREADME.mdに他のツールが記載してあったらそれもお願いね。
+- あとチャレンジのREADME.mdと[指定言語].mdに他の条件が記載してあったらそれもお願いね。
 
 ## セットアップ
 

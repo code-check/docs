@@ -8,8 +8,8 @@ you can!
 - <a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a>
 - <a href=
 "https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.
-- Finally, chant `npm install codecheck` in the CLI to summon codecheck.
-- Also: Any other dependencies specified in the challenge's README.md
+- Chant `npm install codecheck -g` in the CLI to summon codecheck.
+- Also: see additional requirements for your challenge in README.md & [YOUR LANGUAGE].md
 
 ## Setup
 
