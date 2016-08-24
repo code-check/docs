@@ -41,7 +41,10 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-73275567-3', 'auto');
+      ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+
       ga('send', 'pageview');
+      ga('codecheckJointTracker.send', 'pageview');
   </script>
 
 </head>
@@ -149,7 +152,7 @@
             <div class="section">
 
                 <h1 id="github">GitHubを利用した受験方法</h1>
-<p>なんとCodecheckは他のサービスには真似できない、<br />
+<p>なんとcodecheckは他のサービスには真似できない、<br />
 ローカル環境でチャレンジに挑戦することが出来るんだぞ。  </p>
 <h2 id="_1">必須条件</h2>
 <ul>
@@ -157,8 +160,8 @@
 <li><a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方・ドキュは<a href="https://git-scm.com/book/ja/v2">ここ</a>。)  </li>
 <li><a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a></li>
 <li><a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントをcodecheck.ioに接続</a>  </li>
-<li>最後に <code>npm install codecheck</code> ってCLIで唱えて<br />
-codecheck CLI を召喚しておいてね。</li>
+<li>最後に <code>npm install codecheck -g</code> ってCLIで唱えてcodecheck CLI を召喚しておいてね。</li>
+<li>あとチャレンジのREADME.mdと[指定言語].mdに他の条件が記載してあったらそれもお願いね。</li>
 </ul>
 <h2 id="_2">セットアップ</h2>
 <p><img alt="Githubでローカルにチャレンジをセットアップする方法" src="../images/start_challenge_github.gif" /></p>

@@ -41,7 +41,10 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-73275567-3', 'auto');
+      ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+
       ga('send', 'pageview');
+      ga('codecheckJointTracker.send', 'pageview');
   </script>
 
 </head>
@@ -149,9 +152,9 @@
 <h2 id="_3">サーバーサイド言語・フレームワークのバージョン</h2>
 <p>Webエディタでテストを実行する際、およびチャレンジ回答を提出する際、サーバー上で以下の言語・フレームワークのバージョンで回答が評価されます。<br />
 ローカル環境でテストを実行する際とcode-check.ioに表示されるテストの実行結果が同じでない場合、一度サーバーとローカルのバージョンの差異がないか確認ください。</p>
-<h5 id="codecheck-cli">Codecheck CLI</h5>
+<h5 id="codecheck-cli">codecheck CLI</h5>
 <ul>
-<li>Codecheck v0.5.8</li>
+<li>codecheck v0.5.8</li>
 </ul>
 <h5 id="_4">言語</h5>
 <ul>

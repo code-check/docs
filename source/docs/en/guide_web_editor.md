@@ -22,13 +22,13 @@ Click the setting icon if you want to change:
 You can run the tests by clicking the run button in the lower right corner of the Web Editor.
 
 - About the test code
-  - Codecheck support test by using test framework as like an Unit test.
+  - codecheck runs tests by using test frameworks, just like unit tests.
   - "Test" does not mean Exam or challenge, but test code to verify whether your program is correct or not.  
   - Applicants can try to run the publicly available test code.
 
 ### Preview
-Preview feature enable applicants to see the appearance of an application configured with HTML, CSS, and Javascript.  
-You can see the latest html view automatically without reloading the Web Editor when the Auto Preview setting is checked.
+The preview feature enables applicants to see the appearance of an application configured with HTML, CSS, and Javascript.  
+You can see the latest html view automatically without reloading the Web Editor when the 'Auto Preview' setting is checked.
 
 ### Saving Challenges
 Click the "SAVE" button to save the files you edited.  

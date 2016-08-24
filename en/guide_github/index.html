@@ -41,7 +41,10 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-73275567-3', 'auto');
+      ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+
       ga('send', 'pageview');
+      ga('codecheckJointTracker.send', 'pageview');
   </script>
 
 </head>
@@ -63,13 +66,6 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         <ul class="current">
-
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../.."></a>
-
-    </li>
-<li>
 
             <li>
     <li class="toctree-l1 ">
@@ -158,7 +154,8 @@ you can!  </p>
 <li><a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a></li>
 <li><a href=
 "https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.</li>
-<li>Finally, chant <code>npm install codecheck</code> in the CLI to summon codecheck.</li>
+<li>Chant <code>npm install codecheck -g</code> in the CLI to summon codecheck.</li>
+<li>Also: see additional requirements for your challenge in README.md &amp; [YOUR LANGUAGE].md</li>
 </ul>
 <h2 id="setup">Setup</h2>
 <p><img alt="Setting up your challenge locally with GitHub" src="../images/start_challenge_github.gif" /></p>

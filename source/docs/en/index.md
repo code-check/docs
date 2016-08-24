@@ -1,10 +1,10 @@
 # Welcome
 
-Welcome to Codecheck's documentation!
+Welcome to codecheck's documentation!
 
-## What's Codecheck?
+## What's codecheck?
 
-Codecheck is an [awesome coding challenge platform](https://app.code-check.io/openchallenges).
+codecheck is an [awesome coding challenge platform](https://app.code-check.io/openchallenges).
 
 ## Get Started
 

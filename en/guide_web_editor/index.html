@@ -41,7 +41,10 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-73275567-3', 'auto');
+      ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+
       ga('send', 'pageview');
+      ga('codecheckJointTracker.send', 'pageview');
   </script>
 
 </head>
@@ -63,13 +66,6 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         <ul class="current">
-
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../.."></a>
-
-    </li>
-<li>
 
             <li>
     <li class="toctree-l1 ">
@@ -162,13 +158,13 @@ Click the setting icon if you want to change:
 <p>You can run the tests by clicking the run button in the lower right corner of the Web Editor.</p>
 <ul>
 <li>About the test code</li>
-<li>Codecheck support test by using test framework as like an Unit test.</li>
+<li>codecheck runs tests by using test frameworks, just like unit tests.</li>
 <li>"Test" does not mean Exam or challenge, but test code to verify whether your program is correct or not.  </li>
 <li>Applicants can try to run the publicly available test code.</li>
 </ul>
 <h3 id="preview">Preview</h3>
-<p>Preview feature enable applicants to see the appearance of an application configured with HTML, CSS, and Javascript.<br />
-You can see the latest html view automatically without reloading the Web Editor when the Auto Preview setting is checked.</p>
+<p>The preview feature enables applicants to see the appearance of an application configured with HTML, CSS, and Javascript.<br />
+You can see the latest html view automatically without reloading the Web Editor when the 'Auto Preview' setting is checked.</p>
 <h3 id="saving-challenges">Saving Challenges</h3>
 <p>Click the "SAVE" button to save the files you edited.<br />
 <img alt="イメージ13" src="../images/s13.png" /><br />
