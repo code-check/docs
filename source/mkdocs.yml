@@ -1,7 +1,8 @@
 site_name: Codecheck Documentation
-theme: readthedocs
-use_directory_urls: true
-# When we use multiple trackers, add other trackers post-compilation.
+
+## We use 2 trackers, so add these two lines in each static page post-compilation.
+# ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+# ga('codecheckJointTracker.send', 'pageview');
 google_analytics: ['UA-73275567-3', 'auto']
 
 # Good themes: readthedocs, yeti, journal
@@ -9,6 +10,9 @@ google_analytics: ['UA-73275567-3', 'auto']
 # Color does not match codecheck: cyborg, united, amelia, mkdocs
 # Font does not match codecheck: simplex
 # Bleh in general: bootstrap
+theme: readthedocs
+
+use_directory_urls: true
 
 pages:
 - "": index.md
