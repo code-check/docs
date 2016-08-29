@@ -1,0 +1,30 @@
+site_name: Codecheck Documentation
+
+## We use 2 trackers, so add these two lines in each static page post-compilation.
+# ga('create', 'UA-73275567-5', 'auto', 'codecheckJointTracker');
+# ga('codecheckJointTracker.send', 'pageview');
+google_analytics: ['UA-73275567-3', 'auto']
+
+# Good themes: readthedocs, yeti, journal
+# Not elegantly responsive: readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal
+# Color does not match codecheck: cyborg, united, amelia, mkdocs
+# Font does not match codecheck: simplex
+# Bleh in general: bootstrap
+theme: readthedocs
+
+use_directory_urls: true
+
+pages:
+- "": index.md
+- Welcome: en/index.md
+- Using Github: en/guide_github.md
+- Using The Web Editor: en/guide_web_editor.md
+# - Organizing Challenges: en/guide_organizing_challenges.md
+- Reference: en/reference_users.md
+# - Organizer Reference: en/reference_organizers.md
+- はじめに: ja/index.md
+- Webエディタの使用方法: ja/guide_web_editor.md
+- Githubの使用方法: ja/guide_github.md
+- チャレンジの運営: ja/guide_organizing_challenges.md
+- リファレンス: ja/reference_users.md
+# - 運営者リファレンス: ja/reference_organizers.md
