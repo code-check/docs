@@ -1,6 +1,5 @@
-# This repo serves static pages via github pages, so no python executables are necessary.
-*.py
-*.pyc
+# Logs don't belong.
+*.log
 
 # OS X needs to shut its mouth
 *.DS_Store
