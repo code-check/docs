@@ -38,8 +38,7 @@ class PostMkdocsParser(HTMLParser):
     def __kill__(self):
         self.targetIsFullHTML = False
         self.targetLang = ''
-        self.results = ''
-        self.results = set([])
+        self.results.clear()
 
     def handle_decl(self, data):
         if data == "DOCTYPE html":
@@ -56,7 +55,7 @@ class PostMkdocsParser(HTMLParser):
             if ( (tag == 'a' and attr == ('href', '..')) or
                  (self.targetLang == 'en' and tag == 'a' and
                   attr[0] == 'href' and ('../ja/' in attr[1])) or
-                 (self.targetLang == 'jp' and tag == 'a' and
+                 (self.targetLang == 'ja' and tag == 'a' and
                   attr[0] == 'href' and ('../en/' in attr[1]))
                ):
                     #redundant top level index TOC item.
@@ -95,16 +94,18 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
             parser.targetLang = 'ja'
         parser.feed(htmlString)
         if parser.results:
-            allResults.append((htmlFileFullPath, parser.results))
-            pdb.set_trace()
+            allResults.append((htmlFileFullPath, parser.results.copy()))
+        else:
+            print parser.results
+            print 'no results?'
         print 'htmlFileFullPath is: ' + htmlFileFullPath
-
         htmlFile.close()
         parser.__kill__()
-        parser.reset()
+
         # TODO: Identify EN items in JA pages in TOC and remove element.
         # TODO: Identify JA items in EN pages in TOC and remove element.
         # TODO: Change all filenames to unicode.
+
     pdb.set_trace()
 
     # for results in allResults:
