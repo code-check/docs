@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG,
 
 googleTagManagerContainerId = 'GTM-MNRH4J'
 
-googleTagManagerScript = """
+googleTagManagerScriptLines = """
 <!-- Google Tag Manager -->
   <noscript>
     <iframe src="//www.googletagmanager.com/ns.html?id={containerId}"
@@ -26,9 +26,8 @@ googleTagManagerScript = """
     }})(window,document,'script','dataLayer','{containerId}');
   </script>
 <!-- End Google Tag Manager -->
-""".format(containerId = googleTagManagerContainerId)
+""".format(containerId = googleTagManagerContainerId).splitlines()
 
-# create a subclass and override the handler methods
 class PostMkdocsParser(HTMLParser):
 
     targetIsFullHTML = False
@@ -47,8 +46,6 @@ class PostMkdocsParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         for attr in attrs:
 
-            # TODO: Find header and insert tagmanager script right underneath it.
-
             if self.targetIsFullHTML and tag == 'body':
                 self.results.add(('injectTagManager', self.getpos()))
 
@@ -61,11 +58,13 @@ class PostMkdocsParser(HTMLParser):
                     #redundant top level index TOC item.
                     self.results.add(('kill', self.getpos()))
 
+
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
 
 isMkdocsInstalled = (
     subprocess.check_output(['mkdocs', '--version'])[0:15] == 'mkdocs, version')
+
 
 if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     print('all dependencies present. Initiate build...')
@@ -80,12 +79,10 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                 htmlFileFullPaths.add(root + '/' + filename)
                 logging.debug(root + '/' + filename + ' found!')
 
-    allResults = []
-
     for htmlFileFullPath in htmlFileFullPaths:
         print 'accessing ' + htmlFileFullPath + '...'
-        htmlFile = open(htmlFileFullPath, 'r')
-        htmlString = htmlFile.read()
+        readHtmlFile = open(htmlFileFullPath, 'r')
+        htmlString = readHtmlFile.read()
         parser = PostMkdocsParser()
 
         if '/en/' in htmlFileFullPath:
@@ -93,22 +90,44 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
         if '/ja/' in htmlFileFullPath:
             parser.targetLang = 'ja'
         parser.feed(htmlString)
-        if parser.results:
-            allResults.append((htmlFileFullPath, parser.results.copy()))
-        else:
-            print parser.results
-            print 'no results?'
-        print 'htmlFileFullPath is: ' + htmlFileFullPath
-        htmlFile.close()
+
+        results = parser.results.copy()
+        readHtmlFile.close()
         parser.__kill__()
 
         # TODO: Identify EN items in JA pages in TOC and remove element.
         # TODO: Identify JA items in EN pages in TOC and remove element.
         # TODO: Change all filenames to unicode.
 
-    pdb.set_trace()
+        if results:
+            htmlLines = htmlString.splitlines()
 
-    # for results in allResults:
+            for result in results:
+                pdb.set_trace()
+                position = int(result[1][0])
+
+                # TODO: replace the standard 'pop()' with a method where
+                # we can mark lines to delete,
+                # and 'flush' these changes simultaneously at the end.
+
+                if result[0] == 'injectTagManager':
+                    googleTagManagerScriptLines.reverse()
+                    for line in googleTagManagerScriptLines:
+                        htmlLines.insert(position, line)
+                        position += 1
+
+                if result[0] == 'kill':
+                    for i in xrange(0,6):
+                        print 'pop! goes ' + htmlLines[position-3]
+                        htmlLines.pop(position-3)
+
+            htmlNewString = ''
+            for line in htmlLines:
+                htmlNewString += (line + '\n')
+            pdb.set_trace()
+            open(htmlFileFullPath, 'w').write(htmlNewString)
+
+    pdb.set_trace()
 
 else:
     logging.error( """ dependencies missing.
