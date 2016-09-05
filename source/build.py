@@ -1,11 +1,12 @@
-import sys
 import os
 import subprocess
 from os.path import join, getsize
+from HTMLParser import HTMLParser
 
 import pdb, logging
 
-logging.basicConfig(level=logging.ERROR,
+
+logging.basicConfig(level=logging.DEBUG,
                     filename='logs.log',
                     filemode='w')
 
@@ -27,6 +28,40 @@ googleTagManagerScript = """
 <!-- End Google Tag Manager -->
 """.format(containerId = googleTagManagerContainerId)
 
+# create a subclass and override the handler methods
+class PostMkdocsParser(HTMLParser):
+
+    targetIsFullHTML = False
+    targetLang = ''
+    results = set([])
+
+    def __kill__(self):
+        self.targetIsFullHTML = False
+        self.targetLang = ''
+        self.results = ''
+        self.results = set([])
+
+    def handle_decl(self, data):
+        if data == "DOCTYPE html":
+            self.targetIsFullHTML = True
+
+    def handle_starttag(self, tag, attrs):
+        for attr in attrs:
+
+            # TODO: Find header and insert tagmanager script right underneath it.
+
+            if self.targetIsFullHTML and tag == 'body':
+                self.results.add(('injectTagManager', self.getpos()))
+
+            if ( (tag == 'a' and attr == ('href', '..')) or
+                 (self.targetLang == 'en' and tag == 'a' and
+                  attr[0] == 'href' and ('../ja/' in attr[1])) or
+                 (self.targetLang == 'jp' and tag == 'a' and
+                  attr[0] == 'href' and ('../en/' in attr[1]))
+               ):
+                    #redundant top level index TOC item.
+                    self.results.add(('kill', self.getpos()))
+
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
 
@@ -38,34 +73,41 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     subprocess.call('mkdocs build --clean', shell=True)
     print('mkdocs build successful. Initiate tagmanager injection...')
     siteDirectory = cwd + "/site"
-    htmlFileFullnames = []
+    htmlFileFullPaths = set([])
 
     for root, subDirectories, files in os.walk(siteDirectory):
         for filename in os.listdir(root):
             if filename.endswith('.html'):
-                htmlFileFullnames.append(root + '/' + filename)
-                print root + '/' + filename + ' found!'
+                htmlFileFullPaths.add(root + '/' + filename)
+                logging.debug(root + '/' + filename + ' found!')
 
-    for htmlFilefullname in htmlFileFullnames:
-        print 'accessing' + htmlFilefullname + '...'
-        htmlLines = open(htmlFilefullname, 'r').readlines()
-        for index, line in enumerate(htmlLines):
+    allResults = []
 
-            # TODO: Find header and insert tagmanager script right underneath it.
+    for htmlFileFullPath in htmlFileFullPaths:
+        print 'accessing ' + htmlFileFullPath + '...'
+        htmlFile = open(htmlFileFullPath, 'r')
+        htmlString = htmlFile.read()
+        parser = PostMkdocsParser()
 
-            # Identify top index page item in TOC.
-            if '<a class="" href=".."></a>\n' in line:
-                # TODO: Unnecessary item in TOC, remove element.
-                print line
-
-            # TODO: Identify EN items in JA pages in TOC and remove element.
-
-            # TODO: Identify JA items in EN pages in TOC and remove element.
-
-            # TODO: Change all filenames to unicode.
+        if '/en/' in htmlFileFullPath:
+            parser.targetLang = 'en'
+        if '/ja/' in htmlFileFullPath:
+            parser.targetLang = 'ja'
+        parser.feed(htmlString)
+        if parser.results:
+            allResults.append((htmlFileFullPath, parser.results))
             pdb.set_trace()
+        print 'htmlFileFullPath is: ' + htmlFileFullPath
 
+        htmlFile.close()
+        parser.__kill__()
+        parser.reset()
+        # TODO: Identify EN items in JA pages in TOC and remove element.
+        # TODO: Identify JA items in EN pages in TOC and remove element.
+        # TODO: Change all filenames to unicode.
     pdb.set_trace()
+
+    # for results in allResults:
 
 else:
     logging.error( """ dependencies missing.
