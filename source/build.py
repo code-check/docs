@@ -6,9 +6,18 @@ from HTMLParser import HTMLParser
 import pdb, logging
 
 
+# ============================================================================
+
+
 logging.basicConfig(level=logging.DEBUG,
                     filename='logs.log',
                     filemode='w')
+
+cwd = str(os.getcwd())
+lsResults = os.listdir(cwd)
+
+isMkdocsInstalled = (
+    subprocess.check_output(['mkdocs', '--version'])[0:15] == 'mkdocs, version')
 
 googleTagManagerContainerId = 'GTM-MNRH4J'
 
@@ -27,6 +36,10 @@ googleTagManagerScriptLines = """
   </script>
 <!-- End Google Tag Manager -->
 """.format(containerId = googleTagManagerContainerId).splitlines()
+
+
+# ============================================================================
+
 
 class PostMkdocsParser(HTMLParser):
 
@@ -68,37 +81,41 @@ class PostMkdocsParser(HTMLParser):
                 self.results.add(('prune', prunePos))
 
         for attr in attrs:
-            if (
-                 ('ja' in self.pruneThisLang and tag == 'a' and
-                  attr[0] == 'href' and ('/ja/' in attr[1] or attr[1].startswith('ja/'))) or
-                 ('en' in self.pruneThisLang and tag == 'a' and
-                  attr[0] == 'href' and ('/en/' in attr[1] or attr[1].startswith('en/')))
-               ):
-                    #mark for removal: TOC items of the other language.
-                    self.results.add(('prune', prunePos))
+            if ((
+                'ja' in self.pruneThisLang and
+                tag == 'a' and
+                attr[0] == 'href' and
+                ('/ja/' in attr[1] or attr[1].startswith('ja/'))
+            ) or (
+                'en' in self.pruneThisLang and
+                tag == 'a' and
+                attr[0] == 'href' and
+                ('/en/' in attr[1] or attr[1].startswith('en/'))
+            )):
+                #mark for removal: TOC items of the other language.
+                self.results.add(('prune', prunePos))
 
-                    # retroactively prevent removal of main links from top level page to
-                    # each language's index page.
-                    if (not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
-                        self.targetFullPath.endswith('/index.html') and
-                        (attr[1] == 'en/' or attr[1] == 'ja/')
-                        ):
-                            self.results.remove(('prune', prunePos))
+                # retroactively prevent removal of main links from top level page to
+                # each language's index page.
+                if (
+                    not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
+                    self.targetFullPath.endswith('/index.html') and
+                    (attr[1] == 'en/' or attr[1] == 'ja/')
+                ):
+                    self.results.remove(('prune', prunePos))
 
-cwd = str(os.getcwd())
-lsResults = os.listdir(cwd)
 
-isMkdocsInstalled = (
-    subprocess.check_output(['mkdocs', '--version'])[0:15] == 'mkdocs, version')
+# ============================================================================
 
 
 if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
-    print('all dependencies present. Initiate build...')
+    print('All dependencies present. Initiate build...')
     subprocess.call('mkdocs build --clean', shell=True)
-    print('mkdocs build successful. Crawling files...')
+    print('Mkdocs build successful.')
     siteDirectory = cwd + "/site"
     htmlFileFullPaths = set([])
 
+    print('Crawling files...')
     for root, subDirectories, files in os.walk(siteDirectory):
         for filename in os.listdir(root):
             if filename.endswith('.html'):
@@ -116,9 +133,6 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
         readHtmlFile.close()
         parser.__kill__()
 
-        # TODO: Change all filenames to unicode.
-
-        print 'Performing surgery...'
         if resultsSet:
             htmlLines = htmlString.splitlines()
             resultsList = []
@@ -144,8 +158,7 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                 htmlNewString += (line + '\n')
 
             open(htmlFileFullPath, 'w').write(htmlNewString)
-
-    pdb.set_trace()
+    print('Your dirty job is complete, boss! :sunglasses:')
 
 else:
     logging.error( """ dependencies missing.
