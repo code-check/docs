@@ -30,34 +30,60 @@ googleTagManagerScriptLines = """
 
 class PostMkdocsParser(HTMLParser):
 
-    targetIsFullHTML = False
-    targetLang = ''
-    results = set([])
+    def __init__(self, htmlFileFullPath):
+        self.reset()
+        self.results          = set([])
+        self.targetIsFullHTML = False
+        self.targetFullPath   = htmlFileFullPath
+        self.pruneThisLang    = set([])
+        if '/en/' in self.targetFullPath:
+            self.pruneThisLang.add('ja')
+        if '/ja/' in self.targetFullPath:
+            self.pruneThisLang.add('en')
 
     def __kill__(self):
         self.targetIsFullHTML = False
-        self.targetLang = ''
+        self.pruneThisLang.clear()
         self.results.clear()
+        self.reset()
 
     def handle_decl(self, data):
         if data == "DOCTYPE html":
             self.targetIsFullHTML = True
 
+            if not ('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath):
+                self.pruneThisLang.add('en')
+                self.pruneThisLang.add('ja')
+
     def handle_starttag(self, tag, attrs):
+        prunePos = self.getpos()
+        if self.targetIsFullHTML and tag == 'body':
+            # mark for injection of Google Tag Manager Script.
+            self.results.add(('injectTagManager', prunePos))
+
+        if ( tag == 'a' and (('href', '..') in attrs) and
+                            (('class', '') in attrs)
+           ):
+                #mark for removal: unelegant blank TOC item.
+                self.results.add(('prune', prunePos))
+
         for attr in attrs:
-
-            if self.targetIsFullHTML and tag == 'body':
-                self.results.add(('injectTagManager', self.getpos()))
-
-            if ( (tag == 'a' and attr == ('href', '..')) or
-                 (self.targetLang == 'en' and tag == 'a' and
-                  attr[0] == 'href' and ('../ja/' in attr[1])) or
-                 (self.targetLang == 'ja' and tag == 'a' and
-                  attr[0] == 'href' and ('../en/' in attr[1]))
+            if (
+                 ('ja' in self.pruneThisLang and tag == 'a' and
+                  attr[0] == 'href' and ('/ja/' in attr[1] or attr[1].startswith('ja/'))) or
+                 ('en' in self.pruneThisLang and tag == 'a' and
+                  attr[0] == 'href' and ('/en/' in attr[1] or attr[1].startswith('en/')))
                ):
-                    #redundant top level index TOC item.
-                    self.results.add(('kill', self.getpos()))
+                    #mark for removal: TOC items of the other language.
+                    self.results.add(('prune', prunePos))
 
+                    # retroactively prevent removal of main links from top level page to
+                    # each language's index page.
+                    if (not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
+                        self.targetFullPath.endswith('/index.html') and
+                        (attr[1] == 'en/' or attr[1] == 'ja/')
+                        ):
+                            self.results.remove(('prune', prunePos))
 
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
@@ -69,7 +95,7 @@ isMkdocsInstalled = (
 if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     print('all dependencies present. Initiate build...')
     subprocess.call('mkdocs build --clean', shell=True)
-    print('mkdocs build successful. Initiate tagmanager injection...')
+    print('mkdocs build successful. Crawling files...')
     siteDirectory = cwd + "/site"
     htmlFileFullPaths = set([])
 
@@ -80,51 +106,43 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                 logging.debug(root + '/' + filename + ' found!')
 
     for htmlFileFullPath in htmlFileFullPaths:
-        print 'accessing ' + htmlFileFullPath + '...'
+        logging.debug('accessing ' + htmlFileFullPath)
         readHtmlFile = open(htmlFileFullPath, 'r')
         htmlString = readHtmlFile.read()
-        parser = PostMkdocsParser()
-
-        if '/en/' in htmlFileFullPath:
-            parser.targetLang = 'en'
-        if '/ja/' in htmlFileFullPath:
-            parser.targetLang = 'ja'
+        parser = PostMkdocsParser(htmlFileFullPath)
         parser.feed(htmlString)
 
-        results = parser.results.copy()
+        resultsSet = parser.results.copy()
         readHtmlFile.close()
         parser.__kill__()
 
-        # TODO: Identify EN items in JA pages in TOC and remove element.
-        # TODO: Identify JA items in EN pages in TOC and remove element.
         # TODO: Change all filenames to unicode.
 
-        if results:
+        print 'Performing surgery...'
+        if resultsSet:
             htmlLines = htmlString.splitlines()
+            resultsList = []
+            for result in resultsSet:
+                resultsList.append(result)
+            resultsList.sort()
+            resultsList.reverse()
 
-            for result in results:
-                pdb.set_trace()
+            for result in resultsList:
                 position = int(result[1][0])
 
-                # TODO: replace the standard 'pop()' with a method where
-                # we can mark lines to delete,
-                # and 'flush' these changes simultaneously at the end.
-
                 if result[0] == 'injectTagManager':
-                    googleTagManagerScriptLines.reverse()
                     for line in googleTagManagerScriptLines:
                         htmlLines.insert(position, line)
                         position += 1
 
-                if result[0] == 'kill':
-                    for i in xrange(0,6):
-                        print 'pop! goes ' + htmlLines[position-3]
-                        htmlLines.pop(position-3)
+                if result[0] == 'prune':
+                    logging.debug('pop! goes ' + htmlLines[position-1])
+                    htmlLines.pop(position-1)
 
             htmlNewString = ''
             for line in htmlLines:
                 htmlNewString += (line + '\n')
-            pdb.set_trace()
+
             open(htmlFileFullPath, 'w').write(htmlNewString)
 
     pdb.set_trace()
