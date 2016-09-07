@@ -27,6 +27,6 @@ If you want to work on the site, you will want to install and run a local dev co
 - All of the source files are located in `/source`.  
 - You can `mkdocs serve` to run and view the site locally.  
 - When you want to generate the static pages:
- - First, go to `/source` and `mkdocs build`.
+ - First, go to `/source` and `python build.py`.
  - The static pages will be generated into `/source/site`.
  - Move all the files in `/source/site` to the top. Remove any old files.
