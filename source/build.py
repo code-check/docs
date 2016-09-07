@@ -3,16 +3,16 @@ import subprocess
 from os.path import join, getsize
 from HTMLParser import HTMLParser
 
-import pdb, logging
+import logging, pdb
 
 
 # ============================================================================
 
 
-logging.basicConfig( filename='log.log',
-                     level=logging.DEBUG,
-                     format='%(levelname)s: %(message)s [%(asctime)s]',
-                     datefmt='%m/%d/%Y %I:%M:%S %p' )
+logging.basicConfig(filename='log.log',
+                    level=logging.DEBUG,
+                    format='%(levelname)s: %(message)s [%(asctime)s]',
+                    datefmt='%m/%d/%Y %I:%M:%S %p')
 
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
@@ -36,7 +36,7 @@ googleTagManagerScriptLines = """
     }})(window,document,'script','dataLayer','{containerId}');
   </script>
 <!-- End Google Tag Manager -->
- """.format(containerId = googleTagManagerContainerId)
+ """.format(containerId=googleTagManagerContainerId)
 # """.format(containerId = googleTagManagerContainerId).splitlines()
 
 
@@ -50,7 +50,7 @@ class PostMkdocsParser(HTMLParser):
         self.markers          = set([])
         self.targetIsFullHTML = False
         self.targetFullPath   = htmlFileFullPath
-        self.pruneLangs    = set([])
+        self.pruneLangs       = set([])
         if '/en/' in self.targetFullPath:
             self.pruneLangs.add('ja')
         if '/ja/' in self.targetFullPath:
@@ -70,37 +70,42 @@ class PostMkdocsParser(HTMLParser):
             # mark for injection of Google Tag Manager Script.
             self.markers.add(('injectTagManager', position))
 
-        if ( tag == 'a' and (('href', '..') in attrs) and
-                            (('class', '') in attrs)
-           ):
-                # mark for removal: unelegant blank TOC item.
-                self.markers.add(('prune', position))
+        if self.isPruneEmptyElement(tag, attrs):
+            # mark for removal: unelegant blank TOC item.
+            self.markers.add(('prune', position))
 
         for attr in attrs:
-            if isPruneLangElement(self, tag, attr):
+            if self.isPruneLangElement(tag, attr):
                 # mark for removal: TOC items of the other language.
                 self.markers.add(('prune', position))
 
                 # retroactively prevent removal of main links from
                 #  top level page to each language's index page.
-                if isExceptionTopIndex(self, attr):
+                if self.isExceptionTopIndex(attr):
                     self.markers.remove(('prune', position))
 
-def isPruneLangElement(self, tag, attr):
-    return ((
-        'ja' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
-        ('../ja/' in attr[1] or attr[1].startswith('ja/'))
-    ) or (
-        'en' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
-        ('../en/' in attr[1] or attr[1].startswith('en/'))
-    ))
+    def isPruneEmptyElement(self, tag, attrs):
+        return (
+            tag == 'a' and (('href', '..') in attrs) and
+                           (('class', '') in attrs)
+        )
 
-def isExceptionTopIndex(self, attr):
-    return (
-        not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
-        self.targetFullPath.endswith('/index.html') and
-        (attr[1] == 'en/' or attr[1] == 'ja/')
-    )
+    def isPruneLangElement(self, tag, attr):
+        return ((
+            'ja' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
+            ('../ja/' in attr[1] or attr[1].startswith('ja/'))
+        ) or (
+            'en' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
+            ('../en/' in attr[1] or attr[1].startswith('en/'))
+        ))
+
+    def isExceptionTopIndex(self, attr):
+        return (
+            not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
+            self.targetFullPath.endswith('/index.html') and
+            (attr[1] == 'en/' or attr[1] == 'ja/')
+        )
+
 
 # ============================================================================
 
@@ -123,10 +128,10 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
         logging.debug('Parsing and marking ' + htmlFileFullPath)
         readHtmlFile = open(htmlFileFullPath, 'r')
         htmlString = readHtmlFile.read()
+        readHtmlFile.close()
+
         parser = PostMkdocsParser(htmlFileFullPath)
         parser.feed(htmlString)
-
-        readHtmlFile.close()
 
         if parser.markers:
             logging.debug('Modifying html...')
@@ -135,7 +140,7 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
             markersList = []
             for marker in parser.markers:
                 markersList.append(marker)
-            # rearrange markers to start modifications from the end of each file.
+            # rearrange markers to start modifying from the end of each file.
             # this prevents `position`s from becoming outdated.
             markersList.sort(reverse=True)
 
@@ -143,7 +148,7 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                 position = marker[1]
 
                 if marker[0] == 'injectTagManager':
-                    logging.debug('injecting tag manager at row ' + str(position))
+                    logging.debug('injecting tag manager at row '+str(position))
                     htmlLines.insert(position, googleTagManagerScriptLines)
                     position += 1
                     # for line in googleTagManagerScriptLines:
@@ -160,9 +165,9 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     print('Your dirty job is complete, boss! :sunglasses:')
 
 else:
-    logging.error( """ dependencies missing.
-                       Make sure that:
-                       - mkdocs is installed.
-                       - this script runs in /source
-                       - a mkdocs.yml file and a docs/ directory is present. """ )
+    logging.error(""" dependencies missing.
+                      Make sure that:
+                      - mkdocs is installed.
+                      - this script runs in /source
+                      - a mkdocs.yml file and a docs/ directory is present. """)
     # TODO: Make errors specific, eg unique messages by missing dependency.
