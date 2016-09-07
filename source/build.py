@@ -80,12 +80,12 @@ class PostMkdocsParser(HTMLParser):
                 'ja' in self.pruneLangs and
                 tag == 'a' and
                 attr[0] == 'href' and
-                ('/ja/' in attr[1] or attr[1].startswith('ja/'))
+                ('../ja/' in attr[1] or attr[1].startswith('ja/'))
             ) or (
                 'en' in self.pruneLangs and
                 tag == 'a' and
                 attr[0] == 'href' and
-                ('/en/' in attr[1] or attr[1].startswith('en/'))
+                ('../en/' in attr[1] or attr[1].startswith('en/'))
             )):
                 #mark for removal: TOC items of the other language.
                 self.markers.add(('prune', position))
