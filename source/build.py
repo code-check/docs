@@ -45,19 +45,19 @@ class PostMkdocsParser(HTMLParser):
 
     def __init__(self, htmlFileFullPath):
         self.reset()
-        self.results          = set([])
+        self.markers          = set([])
         self.targetIsFullHTML = False
         self.targetFullPath   = htmlFileFullPath
-        self.pruneThisLang    = set([])
+        self.pruneLangs    = set([])
         if '/en/' in self.targetFullPath:
-            self.pruneThisLang.add('ja')
+            self.pruneLangs.add('ja')
         if '/ja/' in self.targetFullPath:
-            self.pruneThisLang.add('en')
+            self.pruneLangs.add('en')
 
     def __kill__(self):
         self.targetIsFullHTML = False
-        self.pruneThisLang.clear()
-        self.results.clear()
+        self.pruneLangs.clear()
+        self.markers.clear()
         self.reset()
 
     def handle_decl(self, data):
@@ -65,35 +65,35 @@ class PostMkdocsParser(HTMLParser):
             self.targetIsFullHTML = True
 
             if not ('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath):
-                self.pruneThisLang.add('en')
-                self.pruneThisLang.add('ja')
+                self.pruneLangs.add('en')
+                self.pruneLangs.add('ja')
 
     def handle_starttag(self, tag, attrs):
-        prunePos = self.getpos()
+        position = self.getpos()[0]
         if self.targetIsFullHTML and tag == 'body':
             # mark for injection of Google Tag Manager Script.
-            self.results.add(('injectTagManager', prunePos))
+            self.markers.add(('injectTagManager', position))
 
         if ( tag == 'a' and (('href', '..') in attrs) and
                             (('class', '') in attrs)
            ):
                 #mark for removal: unelegant blank TOC item.
-                self.results.add(('prune', prunePos))
+                self.markers.add(('prune', position))
 
         for attr in attrs:
             if ((
-                'ja' in self.pruneThisLang and
+                'ja' in self.pruneLangs and
                 tag == 'a' and
                 attr[0] == 'href' and
                 ('/ja/' in attr[1] or attr[1].startswith('ja/'))
             ) or (
-                'en' in self.pruneThisLang and
+                'en' in self.pruneLangs and
                 tag == 'a' and
                 attr[0] == 'href' and
                 ('/en/' in attr[1] or attr[1].startswith('en/'))
             )):
                 #mark for removal: TOC items of the other language.
-                self.results.add(('prune', prunePos))
+                self.markers.add(('prune', position))
 
                 # retroactively prevent removal of main links from top level page to
                 # each language's index page.
@@ -102,7 +102,7 @@ class PostMkdocsParser(HTMLParser):
                     self.targetFullPath.endswith('/index.html') and
                     (attr[1] == 'en/' or attr[1] == 'ja/')
                 ):
-                    self.results.remove(('prune', prunePos))
+                    self.markers.remove(('prune', position))
 
 
 # ============================================================================
@@ -115,7 +115,7 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     siteDirectory = cwd + "/site"
     htmlFileFullPaths = set([])
 
-    print('Crawling files...')
+    print('Crawling html files...')
     for root, subDirectories, files in os.walk(siteDirectory):
         for filename in os.listdir(root):
             if filename.endswith('.html'):
@@ -123,33 +123,34 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                 logging.debug(root + '/' + filename + ' found!')
 
     for htmlFileFullPath in htmlFileFullPaths:
-        logging.debug('accessing ' + htmlFileFullPath)
+        logging.debug('Parsing and marking ' + htmlFileFullPath)
         readHtmlFile = open(htmlFileFullPath, 'r')
         htmlString = readHtmlFile.read()
         parser = PostMkdocsParser(htmlFileFullPath)
         parser.feed(htmlString)
 
-        resultsSet = parser.results.copy()
+        markersSet = parser.markers.copy()
         readHtmlFile.close()
         parser.__kill__()
 
-        if resultsSet:
+        if markersSet:
+            logging.debug('Modifying html...')
             htmlLines = htmlString.splitlines()
-            resultsList = []
-            for result in resultsSet:
-                resultsList.append(result)
-            resultsList.sort()
-            resultsList.reverse()
+            markersList = []
+            for marker in markersSet:
+                markersList.append(marker)
+            markersList.sort()
+            markersList.reverse()
 
-            for result in resultsList:
-                position = int(result[1][0])
+            for marker in markersList:
+                position = marker[1]
 
-                if result[0] == 'injectTagManager':
+                if marker[0] == 'injectTagManager':
                     for line in googleTagManagerScriptLines:
                         htmlLines.insert(position, line)
                         position += 1
 
-                if result[0] == 'prune':
+                if marker[0] == 'prune':
                     logging.debug('pop! goes ' + htmlLines[position-1])
                     htmlLines.pop(position-1)
 
