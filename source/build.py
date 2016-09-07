@@ -9,9 +9,10 @@ import pdb, logging
 # ============================================================================
 
 
-logging.basicConfig(level=logging.DEBUG,
-                    filename='logs.log',
-                    filemode='w')
+logging.basicConfig( filename='log.log',
+                     level=logging.DEBUG,
+                     format='%(levelname)s: %(message)s [%(asctime)s]',
+                     datefmt='%m/%d/%Y %I:%M:%S %p' )
 
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
