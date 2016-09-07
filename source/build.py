@@ -35,7 +35,8 @@ googleTagManagerScriptLines = """
     }})(window,document,'script','dataLayer','{containerId}');
   </script>
 <!-- End Google Tag Manager -->
-""".format(containerId = googleTagManagerContainerId).splitlines()
+ """.format(containerId = googleTagManagerContainerId)
+# """.format(containerId = googleTagManagerContainerId).splitlines()
 
 
 # ============================================================================
@@ -53,12 +54,6 @@ class PostMkdocsParser(HTMLParser):
             self.pruneLangs.add('ja')
         if '/ja/' in self.targetFullPath:
             self.pruneLangs.add('en')
-
-    def __kill__(self):
-        self.targetIsFullHTML = False
-        self.pruneLangs.clear()
-        self.markers.clear()
-        self.reset()
 
     def handle_decl(self, data):
         if data == "DOCTYPE html":
@@ -129,34 +124,35 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
         parser = PostMkdocsParser(htmlFileFullPath)
         parser.feed(htmlString)
 
-        markersSet = parser.markers.copy()
         readHtmlFile.close()
-        parser.__kill__()
 
-        if markersSet:
+        if parser.markers:
             logging.debug('Modifying html...')
             htmlLines = htmlString.splitlines()
+
             markersList = []
-            for marker in markersSet:
+            for marker in parser.markers:
                 markersList.append(marker)
-            markersList.sort()
-            markersList.reverse()
+            # rearrange markers to start modifications from the end of each file.
+            # this prevents `position`s from becoming outdated.
+            markersList.sort(reverse=True)
 
             for marker in markersList:
                 position = marker[1]
 
                 if marker[0] == 'injectTagManager':
-                    for line in googleTagManagerScriptLines:
-                        htmlLines.insert(position, line)
-                        position += 1
+                    logging.debug('injecting tag manager at row ' + str(position))
+                    htmlLines.insert(position, googleTagManagerScriptLines)
+                    position += 1
+                    # for line in googleTagManagerScriptLines:
+                    #     htmlLines.insert(position, line)
+                    #     position += 1
 
                 if marker[0] == 'prune':
                     logging.debug('pop! goes ' + htmlLines[position-1])
                     htmlLines.pop(position-1)
 
-            htmlNewString = ''
-            for line in htmlLines:
-                htmlNewString += (line + '\n')
+            htmlNewString = '\n'.join(htmlLines)
 
             open(htmlFileFullPath, 'w').write(htmlNewString)
     print('Your dirty job is complete, boss! :sunglasses:')
