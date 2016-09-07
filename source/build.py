@@ -73,33 +73,34 @@ class PostMkdocsParser(HTMLParser):
         if ( tag == 'a' and (('href', '..') in attrs) and
                             (('class', '') in attrs)
            ):
-                #mark for removal: unelegant blank TOC item.
+                # mark for removal: unelegant blank TOC item.
                 self.markers.add(('prune', position))
 
         for attr in attrs:
-            if ((
-                'ja' in self.pruneLangs and
-                tag == 'a' and
-                attr[0] == 'href' and
-                ('../ja/' in attr[1] or attr[1].startswith('ja/'))
-            ) or (
-                'en' in self.pruneLangs and
-                tag == 'a' and
-                attr[0] == 'href' and
-                ('../en/' in attr[1] or attr[1].startswith('en/'))
-            )):
-                #mark for removal: TOC items of the other language.
+            if isPruneLangElement(self, tag, attr):
+                # mark for removal: TOC items of the other language.
                 self.markers.add(('prune', position))
 
-                # retroactively prevent removal of main links from top level page to
-                # each language's index page.
-                if (
-                    not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
-                    self.targetFullPath.endswith('/index.html') and
-                    (attr[1] == 'en/' or attr[1] == 'ja/')
-                ):
+                # retroactively prevent removal of main links from
+                #  top level page to each language's index page.
+                if isExceptionTopIndex(self, attr):
                     self.markers.remove(('prune', position))
 
+def isPruneLangElement(self, tag, attr):
+    return ((
+        'ja' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
+        ('../ja/' in attr[1] or attr[1].startswith('ja/'))
+    ) or (
+        'en' in self.pruneLangs and tag == 'a' and attr[0] == 'href' and
+        ('../en/' in attr[1] or attr[1].startswith('en/'))
+    ))
+
+def isExceptionTopIndex(self, attr):
+    return (
+        not('/en/' in self.targetFullPath or '/ja/' in self.targetFullPath) and
+        self.targetFullPath.endswith('/index.html') and
+        (attr[1] == 'en/' or attr[1] == 'ja/')
+    )
 
 # ============================================================================
 
