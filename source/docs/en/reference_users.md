@@ -13,19 +13,19 @@ If you're seeing inconsistencies in the test results being run in your local env
 - codecheck v0.5.8
 
 ##### Languages
-- NodeJS v4.4.7
+- NodeJS v6.9.1
 - Ruby v2.3.1p112
 - Python v2.7.11
 - Python3 v3.5.1
-- Java v1.8.0_91
+- Java v1.8.0_111
 - Scala v2.11.7
 - Groovy v2.4.5
 - Go v1.6.3
-- PHP v5.6.23-2
+- PHP v5.6.27-2
 - Haskell v7.6.3
 - perl v5.18.2
-- C/C++ v4.8
-- C# v4.4.1
+- C/C++ v3.4
+- C# v4.6.1
 
 ##### Tools
 - Apache Maven v3.0.5
@@ -33,9 +33,9 @@ If you're seeing inconsistencies in the test results being run in your local env
 - Gradle v2.7
 - Composer v1.2.0
 - nosetests v1.3.7
-- mocha v2.5.3
-- PHPUnit v5.4.7
-- Bundler v1.12.5
+- mocha v3.1.2
+- PHPUnit v5.6.2
+- Bundler v1.13.6
 - cabal cabal-install v1.22.9.0 using Cabal library v1.22.5.0
 - prove TAP::Harness v3.26 and Perl v5.18.2
 - rspec v3.4.4
