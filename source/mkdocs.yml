@@ -34,6 +34,7 @@ pages:
 - Githubの使用方法: ja/guide_github.md
 - チャレンジの運営: ja/guide_organizing_challenges.md
 - リファレンス: ja/reference_users.md
-- 最新リリース: ja/release/latest.md
-- リリースノート: ja/release/notes.md
+- リリース:
+  - 最新リリース: ja/releases/latest.md
+  - リリースログ: ja/releases/log.md
 # - 運営者リファレンス: ja/reference_organizers.md
