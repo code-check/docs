@@ -35,6 +35,10 @@ pages:
 - チャレンジの運営: ja/guide_organizing_challenges.md
 - リファレンス: ja/reference_users.md
 - リリース:
-  - 最新リリース: ja/releases/latest.md
-  - リリースログ: ja/releases/log.md
+  - リリースノート: ja/releases/index.md
+  - リリース一覧:
+    - ja/releases/2017-01-06.md
+    - ja/releases/2016-08-12.md
+    - ja/releases/2016-04-27.md
+    - ja/releases/2016-04-01.md
 # - 運営者リファレンス: ja/reference_organizers.md
