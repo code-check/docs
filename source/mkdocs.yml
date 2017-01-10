@@ -1,17 +1,5 @@
 site_name: Codecheck Documentation
 
-## We use tag manager. Insert this script in each page after building.
-# <!-- Google Tag Manager -->
-# <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MNRH4J"
-# height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-# <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-# new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-# j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-# '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-# })(window,document,'script','dataLayer','GTM-MNRH4J');</script>
-# <!-- End Google Tag Manager -->
-
-
 # Good themes: readthedocs, yeti, journal
 # Not elegantly responsive: readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal
 # Color does not match codecheck: cyborg, united, amelia, mkdocs
@@ -22,23 +10,20 @@ theme: readthedocs
 use_directory_urls: true
 
 pages:
+## English pages:
 - "": index.md
-- Welcome: en/index.md
-- Using Github: en/guide_github.md
-- Using The Web Editor: en/guide_web_editor.md
-# - Organizing Challenges: en/guide_organizing_challenges.md
-- Reference: en/reference_users.md
-# - Organizer Reference: en/reference_organizers.md
-- はじめに: ja/index.md
-- Webエディタの使用方法: ja/guide_web_editor.md
-- Githubの使用方法: ja/guide_github.md
-- チャレンジの運営: ja/guide_organizing_challenges.md
-- リファレンス: ja/reference_users.md
-- リリース:
-  - リリースノート: ja/releases/index.md
-  - リリース一覧:
-    - ja/releases/2017-01-06.md
-    - ja/releases/2016-08-12.md
-    - ja/releases/2016-04-27.md
-    - ja/releases/2016-04-01.md
-# - 運営者リファレンス: ja/reference_organizers.md
+- Welcome:                en/index.md
+- Using Github:           en/guide_github.md
+- Using The Web Editor:   en/guide_web_editor.md
+#- Organizing Challenges: en/guide_organizing_challenges.md
+- Reference:              en/reference_users.md
+#- Organizer Reference:   en/reference_organizers.md
+##
+## Japanese Pages:
+- はじめに:               ja/index.md
+- Webエディタの使用方法:  ja/guide_web_editor.md
+- Githubの使用方法:       ja/guide_github.md
+- チャレンジの運営:       ja/guide_organizing_challenges.md
+- リファレンス:           ja/reference_users.md
+- リリースノート:         ja/releases/index.md
+#- 運営者リファレンス:    ja/reference_organizers.md
