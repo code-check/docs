@@ -15,18 +15,18 @@ If you want to work on the site, you will want to install and run a local dev co
  2. `git clone` the contents of this repo.
  3. `cd [directory of clone]/source && mkdocs serve`
  4. Access http://localhost:8000/
- 5. Yatta, you're finished!
+ 5. Yatta, you're ready!
 
 ## Dependencies
 
- * [Python2 & Pip](https://www.python.org/downloads/)
- * Mkdocs (`pip install mkdocs`)
+ * [Python3 & Pip3](https://www.python.org/downloads/)
+ * Mkdocs (`pip3 install mkdocs`)
 
 ## Instructions
 
 - All of the source files are located in `/source`.  
-- You can `mkdocs serve` to run and view the site locally.  
+- You can `mkdocs serve` to run and view the site locally.
 - When you want to generate the static pages:
- - First, go to `/source` and `python build.py`.
- - The static pages will be generated into `/source/site`.
+ - First, go to `/source` and `python3 build.py`.
+ - The static pages will be generated into `./source/site`.
  - Move all the files in `/source/site` to the top. Remove any old files.
