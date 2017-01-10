@@ -9,13 +9,3 @@
 
 # Prevent redundant built pages from unnecessarily being added
 source/site/*
-
-# Prevent built pages from being added to master.
-css/*
-fonts/*
-img/*
-js/*
-mkdocs/*
-
-en/*
-ja/*
