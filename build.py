@@ -153,11 +153,11 @@ class PostMkdocsParser(HTMLParser):
 # ============================================================================
 
 
-if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
+if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled:
     print('All dependencies present. Initiate build...')
     subprocess.call('mkdocs build --clean', shell=True)
     print('Mkdocs build successful.')
-    siteDirectory = cwd + "/site"
+    siteDirectory = cwd + "/docs"
     htmlFileFullPaths = set([])
 
     print('Crawling html files...')
