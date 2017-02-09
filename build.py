@@ -14,9 +14,6 @@ logging.basicConfig(filename='debug.log',
                     format='%(levelname)s: %(message)s [%(asctime)s]',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 
-cwd = str(os.getcwd())
-lsResults = os.listdir(cwd)
-
 googleTagManagerContainerId = 'GTM-MNRH4J'
 
 googleTagManagerScriptLines = """
@@ -148,6 +145,9 @@ class PostMkdocsParser(HTMLParser):
 
 
 # ============================================================================
+
+cwd = str(os.getcwd())
+lsResults = os.listdir(cwd)
 
 isMkdocsInstalled = subprocess.check_output(['mkdocs', '--version']).startswith(b'mkdocs')
 
