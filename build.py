@@ -8,7 +8,6 @@ import logging, pdb
 
 # ============================================================================
 
-
 logging.basicConfig(filename='debug.log',
                     level=logging.DEBUG,
                     format='%(levelname)s: %(message)s [%(asctime)s]',
@@ -31,11 +30,8 @@ googleTagManagerScriptLines = """
   </script>
 <!-- End Google Tag Manager -->
  """.format(containerId=googleTagManagerContainerId)
-# """.format(containerId = googleTagManagerContainerId).splitlines()
-
 
 # ============================================================================
-
 
 class PostMkdocsParser(HTMLParser):
 
@@ -86,9 +82,6 @@ class PostMkdocsParser(HTMLParser):
         position = self.getpos()[0]
         if self.isStartPruneReleaseNotesData(data):
             self.markers.add(('startPrune', position+1))
-        # if self.isPruneReleaseNotesData(self, data):
-        #     self.markers.add(('prune', position))
-
 
     def handle_endtag(self, tag):
         if self.isEndPruneReleaseNotesData(tag):
@@ -115,9 +108,6 @@ class PostMkdocsParser(HTMLParser):
         for i in self.markers:
             if i[0] == 'startPrune' and href and classIsToctreeL4 and (i[1] < self.getpos()[0]):
                 return True
-
-
-        # return hrefStartsWithV and classIsToctreeL4
 
     def isPruneLangElement(self, tag, attr):
         return ((
@@ -192,9 +182,6 @@ if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled
                     logging.debug('injecting tag manager at row '+str(position))
                     htmlLines.insert(position, googleTagManagerScriptLines)
                     position += 1
-                    # for line in googleTagManagerScriptLines:
-                    #     htmlLines.insert(position, line)
-                    #     position += 1
 
                 if marker[0] == 'prune':
                     logging.debug('pop! goes ' + htmlLines[position-1])
