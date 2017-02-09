@@ -8,8 +8,6 @@ site_name: Codecheck Documentation
 theme: readthedocs
 
 use_directory_urls: true
-docs_dir: source
-site_dir: docs
 
 pages:
 ## English pages:
