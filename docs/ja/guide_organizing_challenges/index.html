@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>チャレンジの運営 - Codecheck Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u30c1\u30e3\u30ec\u30f3\u30b8\u306e\u904b\u55b6";
+    var mkdocs_page_input_path = "ja/guide_organizing_challenges.md";
+    var mkdocs_page_url = "/ja/guide_organizing_challenges/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Codecheck Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../.."></a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../en/">Welcome</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../en/guide_github/">Using Github</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../en/guide_web_editor/">Using The Web Editor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../en/reference_users/">Reference</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../">はじめに</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide_web_editor/">Webエディタの使用方法</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide_github/">Githubの使用方法</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">チャレンジの運営</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">チャレンジの運営</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">はじめに</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">チャレンジの基本的な作成手順</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">自動テストの実行環境</a></li>
+                
+                    <li><a class="toctree-l4" href="#codecheck-cli">codecheck CLI</a></li>
+                
+                    <li><a class="toctree-l4" href="#_5">チャレンジのサンプル</a></li>
+                
+                    <li><a class="toctree-l4" href="#_6">あらゆる形式のチャレンジ作成方法</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../reference_users/">リファレンス</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release_notes/">リリースノート</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Codecheck Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>チャレンジの運営</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">チャレンジの運営</h1>
+<h2 id="_2">はじめに</h2>
+<p>codecheckのチャレンジはGitHubのリポジトリから作成されます。
+ただし、すべてのGitHubリポジトリをチャレンジとすることができるわけではありません。</p>
+<p>リポジトリをチャレンジとしてcodecheckに取り込むためには以下の手順が必要です。</p>
+<h2 id="_3">チャレンジの基本的な作成手順</h2>
+<h3 id="1-readmemd">1. README.mdに問題文の記載</h3>
+<p>codecheckにリポジトリを取り込むには、
+<strong>リポジトリのルートに「README.md」というマークダウンファイルがある</strong>
+ことが必要です。README.mdにはチャレンンジの内容(問題文)を記述してください。</p>
+<h3 id="2-challengejson">2. challenge.jsonの記載・設定</h3>
+<p>次に、<strong>リポジトリのルートに「challenge.json」というjsonファイルを設定する</strong> 必要があります。</p>
+<p>challenge.jsonはリポジトリがcodecheckのチャレンジであることを識別するために使用されるファイルで、</p>
+<ul>
+<li>チャレンジで編集可能なファイル</li>
+<li>テストの実行方法</li>
+</ul>
+<p>などが記述されます。</p>
+<p>challenge.jsonでは以下のキーを定義することができます。</p>
+<h4 id="editable-arraystring">editable: Array[String]</h4>
+<p>編集可能なファイルを指定します。
+値の指定にはワイルドカードが使用できます。(gitの.gitignoreで使用可能なワイルドカードと同じ書式が使用できます。)</p>
+<h4 id="ignores-arraystring">ignores: Array[String]</h4>
+<p>チャレンジから完全に取り除くファイルを指定します。
+値の指定にはワイルドカードが使用できます。(gitの.gitignoreで使用可能なワイルドカードと同じ書式が使用できます。)</p>
+<h4 id="includes-arraystringexcludes-arraystring">includes: Array[String]/excludes: Array[String]</h4>
+<p>ユーザが参照可能なファイルを制限します。
+値の指定にはワイルドカードが使用できます。(gitの.gitignoreで使用可能なワイルドカードと同じ書式が使用できます。)</p>
+<p>excludesにマッチしたファイルはチャレンジのユーザからは見えなくなります。
+ただし、ファイル名がexcludesとincludesの両方にマッチする場合はincludesの方が優先されユーザはそのファイルを見ることができます。</p>
+<p>excludesが指定されていない場合はすべてのファイルはユーザ可視です。</p>
+<p>例) testディレクトリに3つのテストファイルがある
+- test/test1.js
+- test/test2.js
+- test/test3.js</p>
+<p>test1のみユーザに公開する</p>
+<pre><code>{
+  &quot;excludes&quot;: [&quot;test/*&quot;],
+  &quot;includes&quot;: [&quot;test1.js&quot;]
+}
+</code></pre>
+
+<p>※ README.mdはここでの指定に関わらずチャレンジのファイルセットには含まれません。(ユーザはWeb EditorでREADME.mdを参照することができます。)</p>
+<h4 id="allownewfile-boolean">allowNewFile: Boolean</h4>
+<p>デフォルト値：false
+Web Editorでファイルの追加を許可するかどうかを指定します。</p>
+<h4 id="allowruntest-boolean">allowRunTest: Boolean</h4>
+<p>デフォルト値：true
+Web Editorでテストの実行を許可するかどうかを指定します。</p>
+<h4 id="test-string">test: String</h4>
+<p>テストに使用するコマンドを指定します。
+テストには任意のテストフレームワークが使用できます。(<a href="#codecheck-cli">codecheck CLI</a>参照)</p>
+<p>例)</p>
+<pre><code>{
+  &quot;test&quot;: &quot;mocha&quot;
+}
+</code></pre>
+
+<pre><code>{
+  &quot;test&quot;: &quot;sbt test&quot;
+}
+</code></pre>
+
+<h4 id="markdowntest-arraystring">markdownTest: Array[String]</h4>
+<p>マークダウンテストとするファイルへのパスを指定します。(<a href="#markdown-test">Markdown Test</a>参照)</p>
+<p>例)</p>
+<pre><code>{
+  &quot;markdownTest&quot;: [&quot;question1.md&quot;]
+}
+</code></pre>
+
+<h3 id="3">3. ユーザーに非表示にするコードの設定</h3>
+<p>任意のテキストファイル内で「BEGIN_CHALLENGE」という文字列を含む行から「END_CHALLENGE」という文字列を記載することで、チャレンジからユーザーに非表示にするコードを設定することが出来ます。</p>
+<p>例) Before</p>
+<pre><code class="javascript">function fizzbuzz(n) {
+  //Write your answer here
+  //BEGIN_CHALLENGE
+  if (n % 15 === 0) {
+    return &quot;FizzBuzz&quot;;
+  } else if (n % 5 === 0) {
+    return &quot;Buzz&quot;;
+  } else if (n % 3 === 0) {
+    return &quot;Fizz&quot;;
+  } else {
+    return n;
+  }
+  //END_CHALLENGE
+}
+</code></pre>
+
+<p>例) After</p>
+<pre><code class="javascript">function fizzbuzz(n) {
+  //Write your answer here
+}
+</code></pre>
+
+<p>各種テストフレームワークを使用したテストを作成する際には、テストが成功する実装がなければそのテストコード自体が正しいかどうかを判断できません。</p>
+<p>この機能を利用することで、テストが完全に動作するチャレンジを作成しつつ、その実装のみをユーザから隠蔽することができます。</p>
+<h2 id="_4">自動テストの実行環境</h2>
+<p>各種言語／テストフレームワークがあらかじめインストールされたDocker環境(ubuntu14.04)で実行されます。
+言語やテストフレームワークは常にバージョンアップするものなので、この環境は必要に応じて随時更新されます。</p>
+<h2 id="codecheck-cli">codecheck CLI</h2>
+<p>codecheck CLIは自動テストで使用されるコマンドラインのテストランナーです。</p>
+<p>オープンソースで公開されておりnpmコマンドでインストールすることができます。</p>
+<p>https://www.npmjs.com/package/codecheck</p>
+<pre><code class="bash">npm install codecheck -g
+</code></pre>
+
+<p>codecheckコマンドは以下のことを行います。</p>
+<ul>
+<li>子プロセスとして任意のテストコマンドを実行</li>
+<li>標準出力／エラー出力からテストの実行件数／成功件数を取得</li>
+</ul>
+<p>原理的にはあらゆるテストコマンドが実行できますが、非対応のテストフレームワークからは正しく実行件数／成功件数が取得できません。</p>
+<p>現在対応している言語／テストフレームワークは以下です。</p>
+<ul>
+<li>Ruby</li>
+<li>RSpec</li>
+<li>TestUnit</li>
+<li>Java</li>
+<li>Maven(JUnit)</li>
+<li>Groovy</li>
+<li>Gradle(JUnit/Spock)</li>
+<li>JavaScript(Node.js)</li>
+<li>Mocha</li>
+<li>Python</li>
+<li>Nosetests</li>
+<li>Scala</li>
+<li>SBT(ScalaTest/Specs2)</li>
+<li>Perl</li>
+<li>Prove</li>
+<li>PHP</li>
+<li>PHPUnit</li>
+<li>Haskell</li>
+<li>Cabal</li>
+<li>Go</li>
+<li>Go Test</li>
+<li>C++</li>
+</ul>
+<p>テストフレームワークへの対応は随時更新されます。</p>
+<p>また、後述の言語不問のチャレンジやWebアプリケーションチャレンジをサポートするユーティリティが含まれています。</p>
+<h2 id="_5">チャレンジのサンプル</h2>
+<p>JavaScriptでFizzBuzz問題を出題するサンプルです。</p>
+<p>https://github.com/code-check/challenge-fizzbuzz-js</p>
+<p>このチャレンジは以下のような内容になっています。</p>
+<ul>
+<li>編集可能なファイルはapp.jsのみ(ファイルの追加は不可)</li>
+<li>app.jsのfunction fizzbuzzを編集して正しく実装する</li>
+<li>app.jsにあらかじめ記述されている正答例は削除される</li>
+<li>test.public.jsはユーザが見ることができ、実行することが可能</li>
+<li>test.private.jsはユーザは見ることができず、採点時のみ実行される</li>
+<li>テストフレームワークはmocha</li>
+</ul>
+<h2 id="_6">あらゆる形式のチャレンジ作成方法</h2>
+<h3 id="markdown">Markdown式チャレンジの作成</h3>
+<p>Markdownチャレンジとはマークダウン形式で記述された選択式の文章問題テストのことです。</p>
+<h4 id="_7">作成方法</h4>
+<p>チェックボックス付きのリスト(<code>- [ ]</code>/<code>- [x]</code>)を利用して選択問題を作成することが出来ます。</p>
+<p>例)</p>
+<pre><code>Q1. xxx
+- [ ] aaa
+- [x] bbb
+- [ ] ccc
+- [ ] ddd
+
+Q2. xxx
+- [ ] aaa
+- [ ] bbb
+- [ ] ccc
+- [x] ddd
+
+Q3. xxx
+- [x] aaa
+- [ ] bbb
+- [ ] ccc
+- [x] ddd
+</code></pre>
+
+<p>問題作成時に正解の選択肢にはあらかじめチェックをいれておきます。
+複数選択の正解を設定することも可能です。</p>
+<p>正解はユーザからは見ることができず、提出時には自動採点されます。</p>
+<p>※1
+問題の選択肢は必ず連続するチェックボックスリストの１行として定義してください。
+チェックボックスリスト以外の行が含まれた場合は別の問題と判定されます。</p>
+<p>※2
+README.mdをMarkdownチャレンジにすることはできません。
+(README.mdはチャレンジを開始する前の段階でユーザに公開されます。)</p>
+<h4 id="_8">自動採点の仕組み</h4>
+<p>チャレンジ生成時にmochaのテストコードが自動的に生成されます。
+このため生成されたチャレンジのファイルセットにはpackage.jsonが含まれ、challenge.jsonは改変されます。</p>
+<p>マークダウンテストではこれらのファイルはユーザに見える必要はないので、あらかじめchallenge.jsonでexcludesしておくことが推奨されます。</p>
+<pre><code>{
+  &quot;markdownTest&quot;: [
+    &quot;question1.md&quot;,
+    &quot;question2.md&quot;
+  ],
+  &quot;excludes&quot;: [
+    &quot;package.json&quot;,
+    &quot;challenge.json&quot;
+  ]
+}
+</code></pre>
+
+<p>マークダウンテストをそれ以外のテストと組み合わせることは可能ですが非推奨です。</p>
+<h3 id="_9">言語不問式チャレンジの作成</h3>
+<p>言語不問のチャレンジを作成する場合はユーザには以下の要件を課すことになります。</p>
+<ul>
+<li>任意の言語でコンソールアプリケーションを作成してもらう</li>
+<li>そのアプリは標準入力またはコマンドライン引数でパラメータを受け取る</li>
+<li>そのアプリは標準出力に結果を出力した後に終了する</li>
+</ul>
+<p>逆から言うとチャレンジ作成者は以下のようなテストを作成する必要があります。</p>
+<ul>
+<li>任意のコマンドラインアプリケーションを実行し、</li>
+<li>そこに標準入力またはコマンドライン引数でパラメータを渡し、</li>
+<li>標準出力の結果を評価する</li>
+</ul>
+<p>この要件が満たされてさえいれば任意のテストフレームワークを使用してテストを作成することができますが、codecheck CLIにはこの形式のテストを支援するためのユーティリティが含まれているのでそれを利用して作成するのが簡単です。</p>
+<p>codecheckのユーティリティを使用するためにはまずcodecheck CLIをローカルにインストールします。</p>
+<pre><code class="bash">npm install codecheck --save
+</code></pre>
+
+<p>その後、mocha等のテストフレームワークを使用したテストを作成します。</p>
+<pre><code class="javascript">var assert = require(&quot;chai&quot;).assert;
+var codecheck = require(&quot;codecheck&quot;);
+
+//コンソールアプリケーションの実行コマンドを環境変数から取得
+var appCommand = process.env.APP_COMMAND;
+
+describe(&quot;test&quot;, function() {
+
+  before(function() {
+    //環境変数が正しく設定されていることのチェック
+    assert(appCommand);
+  });
+
+  it(&quot;test1&quot;, function(done) {
+    //コンソールアプリケーションの作成
+    var app = codecheck.consoleApp(appCommand);
+
+    //inputで標準入力に渡す内容を指定。(可変長引数。または配列も可)
+    app.input(&quot;3&quot;);
+
+    //expectedで標準出力の期待値を指定。(可変長引数。または配列も可)
+    app.expected(&quot;fizz&quot;);
+
+    //実行して期待値通りの出力がされることを確認
+    app.runAndVerify(function(result) {
+      assert(result.succeed, result.getMessage() || &quot;none&quot;);
+      done();
+    })
+  });
+});
+</code></pre>
+
+<p>テスト実行時の環境変数はcodecheck.ymlで指定できるので、ユーザには自分の作成したアプリの実行コマンドをcodecheck.ymlのenvironmentセクションに設定してもらいます。</p>
+<p>また、作成したアプリの実行にbuildが必要な場合はそのコマンドをbuildセクションに設定してもらいます。</p>
+<p>codecheck.yml</p>
+<pre><code class="yaml">build:
+  - npm install
+environment:
+  APP_COMMAND: node app.js
+</code></pre>
+
+<h3 id="web">Webアプリケーション式チャレンジの作成</h3>
+<p>codecheck CLIにはテスト実行前に任意のWebアプリケーションを起動する機能があります。</p>
+<p>codecheck.yml</p>
+<pre><code>web:
+  command: sbt run
+  port: 9000
+  console: true
+  testUrl: /
+  dir: app
+</code></pre>
+
+<p>上記の設定内容は以下の通りです。</p>
+<ul>
+<li>command: sbt run - Webアプリケーションの実行コマンドは「sbt run」</li>
+<li>port: 9000 - Webアプリケーションのポートは9000</li>
+<li>console: true - Webアプリケーションの標準出力をcodecheckコマンドの標準出力にも出力する</li>
+<li>testUrl: / - 起動コマンド実行後このURLに対してGETリクエストを発行し、200が帰ってくるまでウェイトする</li>
+<li>dir: app - コマンドの実行ディレクトリはapp</li>
+</ul>
+<p>この機能を利用することでRuby on RailsやPlayframeworkなどの任意のWebフレームワークの穴埋め問題を作成することが可能です。
+先の言語不問問題の作成方法と組み合わせると言語不問でWebアプリケーションをユーザに作成させることさえできます。</p>
+<p>ただし、DBを使用したい場合はどうするか？等の課題もあるので、この機能はまだ実験的な段階と言えます。
+(H2やSQLLite等の軽量データベースの使用はおそらく可能ですが未検証です。)</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference_users/" class="btn btn-neutral float-right" title="リファレンス">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../guide_github/" class="btn btn-neutral" title="Githubの使用方法"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../guide_github/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reference_users/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
