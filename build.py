@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import subprocess
-from os.path import join, getsize
+from os.path import join
 from html.parser import HTMLParser
 
 import logging, pdb
