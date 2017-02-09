@@ -17,9 +17,6 @@ logging.basicConfig(filename='debug.log',
 cwd = str(os.getcwd())
 lsResults = os.listdir(cwd)
 
-isMkdocsInstalled = (
-    subprocess.check_output(['mkdocs', '--version'])[0:15] == b'mkdocs, version')
-
 googleTagManagerContainerId = 'GTM-MNRH4J'
 
 googleTagManagerScriptLines = """
@@ -152,6 +149,7 @@ class PostMkdocsParser(HTMLParser):
 
 # ============================================================================
 
+isMkdocsInstalled = subprocess.check_output(['mkdocs', '--version']).startswith(b'mkdocs')
 
 if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled:
     print('All dependencies present. Initiate build...')
