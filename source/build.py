@@ -54,13 +54,15 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
                         dir=directoryPath
                 ))
                 os.replace( directoryPath,
-                            directoryPath+'.skipped')
+                            directoryPath+'.skipped' )
             if '.git' in subDirectories or 'source' in subDirectories:
                 print('hrmmmmmmmm not good!')
                 logging.warning(
                     'illegal directory {dirs} detected, skipping!'.format(
                         dirs=subDirectories
                 ))
+                os.replace( join(directoryPath, 'source'),
+                            join(directoryPath, 'source.skipped') )
                 pdb.set_trace()
     print('Parsing/modding html files...')
     for htmlFileFullPath in htmlFileFullPaths:
