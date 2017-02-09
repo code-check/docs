@@ -9,7 +9,7 @@ import logging, pdb
 # ============================================================================
 
 
-logging.basicConfig(filename='log.log',
+logging.basicConfig(filename='debug.log',
                     level=logging.DEBUG,
                     format='%(levelname)s: %(message)s [%(asctime)s]',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
