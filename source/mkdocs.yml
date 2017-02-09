@@ -12,6 +12,7 @@ use_directory_urls: true
 pages:
 ## English pages:
 - "": index.md
+- Source:                 source/index.md
 - Welcome:                en/index.md
 - Using Github:           en/guide_github.md
 - Using The Web Editor:   en/guide_web_editor.md

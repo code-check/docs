@@ -1,6 +1,6 @@
 from html.parser import HTMLParser
-
-class PostMkdocsParser(HTMLParser):
+from os import path
+class htmlParser(HTMLParser):
 
     def __init__(self, htmlFileFullPath):
         self.reset()
@@ -14,7 +14,9 @@ class PostMkdocsParser(HTMLParser):
         if '/ja/' in self.targetFullPath:
             self.pruneLangs.add('en')
         if self.targetFullPath.split('/')[-2] == 'source':
-            self.markers.add(('pruneDirectory', ''))
+            self.markers.add(('skipDirectory', 'source'))
+        if path.split(self.targetFullPath)[-1] in ['README.md', 'README_ja.md']:
+            self.markers.add(('skipFile', 'readme'))
 
     def handle_decl(self, data):
         if data == "DOCTYPE html":

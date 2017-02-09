@@ -1,6 +1,6 @@
 import os
 import subprocess
-from os.path import join, getsize
+from os.path import join
 from lib import googleTagManager
 from lib import postMkdocs
 
@@ -21,8 +21,9 @@ lsResults = os.listdir(cwd)
 isMkdocsInstalled = (
     subprocess.check_output(['mkdocs', '--version'])[0:15] == b'mkdocs, version')
 
-googleTagManagerScriptLines = googleTagManager.scriptLines
 
+googleTagManagerScriptLines = googleTagManager.scriptLines
+postMkdocsParser = postMkdocs.htmlParser
 
 # ============================================================================
 
@@ -38,9 +39,29 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
     for directoryPath, subDirectories, filenames in os.walk(siteDirectory):
         for filename in filenames:
             if filename.endswith('.html'):
-                htmlFileFullPaths.add(directoryPath + '/' + filename)
+                htmlFileFullPaths.add(join(directoryPath, filename))
                 logging.debug(directoryPath + '/' + filename + ' found!')
 
+            if filename.endswith('.md'):
+                print('ruh oh!')
+            if filename.endswith('.gitignore'):
+                print('ruh oh!2')
+
+            if directoryPath.endswith('.git') or directoryPath.endswith('source'):
+                print('hrmmmmmmmm not good!')
+                logging.warning(
+                    'illegal directory {dir} detected, skipping!'.format(
+                        dir=directoryPath
+                ))
+                os.replace( directoryPath,
+                            directoryPath+'.skipped')
+            if '.git' in subDirectories or 'source' in subDirectories:
+                print('hrmmmmmmmm not good!')
+                logging.warning(
+                    'illegal directory {dirs} detected, skipping!'.format(
+                        dirs=subDirectories
+                ))
+                pdb.set_trace()
     print('Parsing/modding html files...')
     for htmlFileFullPath in htmlFileFullPaths:
         logging.debug('Parsing and marking ' + htmlFileFullPath)
@@ -48,7 +69,7 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
         htmlString = readHtmlFile.read()
         readHtmlFile.close()
 
-        parser = postMkdocs.PostMkdocsParser(htmlFileFullPath)
+        parser = postMkdocsParser(htmlFileFullPath)
         parser.feed(htmlString)
 
         if parser.markers:
@@ -65,10 +86,27 @@ if ('mkdocs.yml' in lsResults) and ('docs' in lsResults) and isMkdocsInstalled:
             for marker in markersList:
                 position = marker[1]
 
-                if marker[0] == 'pruneDirectory':
-                    logging.warning('illegal directory "source" detected! Avoiding...')
-                    # TODO: avoiding code here?
-                    continue
+                if marker[0] == 'skipDirectory':
+                    logging.warning(
+                        'illegal directory {dir} detected, skipping!'.format(
+                            dir=marker[1]
+                        )
+                    )
+                    dir, filename = os.path.split(htmlFileFullPath)
+                    os.replace(dir, dir + '.skipped')
+                    htmlFileFullPath = join(dir + '.skipped', filename)
+                    break
+
+                if marker[0] == 'skipFile':
+                    print('whoop whoop!')
+                    logging.warning(
+                        'illegal file {filename} detected, skipping!'.format(
+                            filename=marker[1]
+                        )
+                    )
+                    os.replace(htmlFileFullPath, htmlFileFullPath + '.skipped')
+                    htmlFileFullPath += '.skipped'
+                    break
 
                 if marker[0] == 'injectTagManager':
                     logging.debug('injecting tag manager at row '+str(position))
