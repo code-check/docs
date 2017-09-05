@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Using Github - Codecheck Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using Github";
+    var mkdocs_page_input_path = "en/guide_github.md";
+    var mkdocs_page_url = "/en/guide_github/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Codecheck Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../.."></a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../">Welcome</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Using Github</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#using-github">Using GitHub</a></li>
+                
+                    <li><a class="toctree-l4" href="#requirements">Requirements</a></li>
+                
+                    <li><a class="toctree-l4" href="#setup">Setup</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-the-tests">Running the Tests</a></li>
+                
+                    <li><a class="toctree-l4" href="#saving-your-solution">Saving your Solution</a></li>
+                
+                    <li><a class="toctree-l4" href="#submitting-your-solution">Submitting your Solution</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../guide_web_editor/">Using The Web Editor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../reference_users/">Reference</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../ja/get_started/">はじめに</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../ja/guide_web_editor/">Webエディタの使用方法</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../ja/guide_github/">Githubの使用方法</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../ja/Q-and-A/">よくある質問</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../ja/reference_users/">リファレンス</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Codecheck Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Using Github</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-github">Using GitHub</h1>
+<p>Unlike other platforms, if you want to work on codecheck challenges in your local environment,<br />
+you can!  </p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li><a href="https://github.com/join" target="_blank"> GitHub account</a></li>
+<li><a href="https://git-scm.com/" target="_blank">Git</a> (If you don't know Git, see <a href="https://try.github.io/" target="_blank">this</a> and <a href="https://git-scm.com/doc" target="_blank">this</a>.)</li>
+<li><a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a></li>
+<li><a href=
+"https://app.code-check.io/settings/social" target="_blank">Connect your GitHub account</a> to code-check.io.</li>
+<li>Chant <code>npm install --global codecheck mocha</code> in the CLI.</li>
+<li>Also: see additional requirements for your challenge in README.md &amp; [YOUR LANGUAGE].md</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p><img alt="Setting up your challenge locally with GitHub" src="../images/start_challenge_github.gif" /></p>
+<ul>
+<li><strong>Complete all requirements</strong>.</li>
+<li>Click the <img alt="Fork to / Open with GitHub" src="../images/open_github.png" /> Button.</li>
+<li>Fill out the repository name and click the "OK" button.</li>
+<li>Click the link to jump to the generated GitHub repository page.</li>
+<li>Copy the repo link from the "Clone or Download" menu.</li>
+<li>Go to your CLI and <code>git clone {REPO NAME}</code> to copy the repository to your local directory.</li>
+<li>Now, just launch your favorite IDE/editor and crush that challenge!</li>
+</ul>
+<h2 id="running-the-tests">Running the Tests</h2>
+<ul>
+<li>Once you're ready to test your code, run <code>codecheck</code> from your CLI.</li>
+<li>The test results will print to stdout like this:</li>
+</ul>
+<pre><code>$ codecheck
+codecheck version 0.5.3
+chai@2.3.0 node_modules/chai
+├── assertion-error@1.0.0
+└── deep-eql@0.1.3 (type-detect@0.1.1)
+Finish build: npm install (1966ms)
+////////////////
+Output from the test executable
+////////////////
+codecheck: Finish with code 9
+codecheck: tests  : 9
+codecheck: success: 0
+codecheck: failure: 9
+</code></pre>
+
+<h2 id="saving-your-solution">Saving your Solution</h2>
+<ul>
+<li>Commit your changes to master (See the <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" target="_blank">git docs</a> if necessary).</li>
+<li>Save your answer by pushing to remote master with <code>git push origin master</code>.</li>
+<li>If successful, your answer is also simultaneously saved to the codecheck server.  </li>
+<li>Confirm that the status of the challenge changes from "In Progress" to "Saved" in the challenge details page.</li>
+</ul>
+<h2 id="submitting-your-solution">Submitting your Solution</h2>
+<ul>
+<li>Once you're ready to submit, save your changes following the above instructions.</li>
+<li>Go to the challenge details page and click <img alt="submit" src="../images/submit.png" />.</li>
+<li>You're done! Yaaay!</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../guide_web_editor/" class="btn btn-neutral float-right" title="Using The Web Editor">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Welcome"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../guide_web_editor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>
