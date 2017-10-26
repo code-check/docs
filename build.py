@@ -2,8 +2,8 @@
 import os
 import subprocess
 from os.path import join, getsize
-from lib import googleTagManager
-from lib import postMkdocs
+from source.lib import googleTagManager
+from source.lib import postMkdocs
 
 import logging, pdb
 
