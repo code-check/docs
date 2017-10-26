@@ -66,7 +66,7 @@ if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled
 
                 if marker[0] == 'injectTagManager':
                     logging.debug('injecting tag manager at row '+str(position))
-                    htmlLines.insert(position, googleTagManager.ScriptLines)
+                    htmlLines.insert(position, googleTagManager.scriptLines)
                     position += 1
 
                 if marker[0] == 'prune':
