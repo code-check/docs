@@ -3,8 +3,8 @@ import os
 import subprocess
 from os.path import join
 
-from source.lib import googleTagManager
-from source.lib import postMkdocs
+from lib import googleTagManager
+from lib import postMkdocs
 
 import logging, pdb
 
@@ -70,7 +70,7 @@ if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled
                     position += 1
 
                 if marker[0] == 'prune':
-                    logging.debug('pop! goes ' + htmlLines[position-1])
+                    logging.debug('pop! line removed: ' + htmlLines[position-1])
                     htmlLines.pop(position-1)
 
             htmlNewString = '\n'.join(htmlLines)
