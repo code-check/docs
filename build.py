@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
 import subprocess
-from os.path import join, getsize
+from os.path import join
+
 from source.lib import googleTagManager
 from source.lib import postMkdocs
 
@@ -13,8 +14,6 @@ logging.basicConfig(filename='debug.log',
                     level=logging.DEBUG,
                     format='%(levelname)s: %(message)s [%(asctime)s]',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
-
-googleTagManagerScriptLines = googleTagManager.scriptLines
 
 # ============================================================================
 
@@ -67,7 +66,7 @@ if ('mkdocs.yml' in lsResults) and ('source' in lsResults) and isMkdocsInstalled
 
                 if marker[0] == 'injectTagManager':
                     logging.debug('injecting tag manager at row '+str(position))
-                    htmlLines.insert(position, googleTagManagerScriptLines)
+                    htmlLines.insert(position, googleTagManager.ScriptLines)
                     position += 1
 
                 if marker[0] == 'prune':
