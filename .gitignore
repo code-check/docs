@@ -7,6 +7,10 @@
 # You too, Windows!
 *.ini
 
+# python compile files
+*/__pycache__/*
+*.pyc
+
 # Prevent redundant built pages from unnecessarily being added
 source/site/*
 
