@@ -51,9 +51,6 @@ class PostMkdocsParser(HTMLParser):
         position = self.getpos()[0]
         if self.isStartPruneReleaseNotesData(data):
             self.markers.add(('startPrune', position+1))
-        # if self.isPruneReleaseNotesData(self, data):
-        #     self.markers.add(('prune', position))
-
 
     def handle_endtag(self, tag):
         if self.isEndPruneReleaseNotesData(tag):
