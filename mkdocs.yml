@@ -13,8 +13,8 @@ site_dir: docs
 
 pages:
 ## English pages:
-- "": index.md
-- Welcome:                en/index.md
+- "": index.md            # DO NOT change this path. Build.py will fail.
+- Welcome:                en/index.md # DO NOT change this path. Build.py will fail.
 - Using Github:           en/guide_github.md
 - Using The Web Editor:   en/guide_web_editor.md
 #- Organizing Challenges: en/guide_organizing_challenges.md
@@ -22,11 +22,11 @@ pages:
 #- Organizer Reference:   en/reference_organizers.md
 ##
 ## Japanese Pages:
-- はじめに:               ja/get_started.md
-- Webエディタの使用方法:  ja/guide_web_editor.md
-- Githubの使用方法:       ja/guide_github.md
+- はじめに:                ja/index.md # DO NOT change this path. Build.py will fail.
+- Webエディタの使用方法:    ja/guide_web_editor.md
+- Githubの使用方法:        ja/guide_github.md
 # - チャレンジの運営:       ja/guide_organizing_challenges.md
-- よくある質問:           ja/Q-and-A.md
-- リファレンス:           ja/reference_users.md
+- よくある質問:            ja/Q-and-A.md
+- リファレンス:            ja/reference_users.md
 # - リリースノート:         ja/release_notes.md
-#- 運営者リファレンス:    ja/reference_organizers.md
+#- 運営者リファレンス:      ja/reference_organizers.md

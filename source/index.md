@@ -1,3 +1,4 @@
 # Welcome ようこそ!
 
-[English](en/index.md)  |  [日本語](ja/get_started.md)
+<!-- DO NOT change the below links. Build.py will fail. -->
+[English](en/index.md)  |  [日本語](ja/index.md)
