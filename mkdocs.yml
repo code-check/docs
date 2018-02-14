@@ -1,11 +1,11 @@
 site_name: Codecheck Documentation
 
+theme: readthedocs
 # Good themes: readthedocs, yeti, journal
 # Not elegantly responsive: readable, cosmo, flatly, spacelab, cerulean, slate, mkdocs, journal
 # Color does not match codecheck: cyborg, united, amelia, mkdocs
 # Font does not match codecheck: simplex
 # Bleh in general: bootstrap
-theme: readthedocs
 
 use_directory_urls: true
 docs_dir: source
@@ -28,5 +28,4 @@ pages:
 # - チャレンジの運営:       ja/guide_organizing_challenges.md
 - よくある質問:            ja/Q-and-A.md
 - リファレンス:            ja/reference_users.md
-# - リリースノート:         ja/release_notes.md
 #- 運営者リファレンス:      ja/reference_organizers.md

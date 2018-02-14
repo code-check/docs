@@ -1,53 +1,94 @@
 # GitHubを利用した受験方法
 codecheckでは、GitHubと連携することで
-ローカル環境で問題を回答することが可能です。
+ローカル環境で問題を回答することが可能です。  
 ※GitHub受験が可能な問題のみが対象です。
+
 
 ## 必須条件
 - <a href="https://github.com/join" target="_blank">Githubアカウントが必要です</a>
-- <a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方は[こちらを](https://git-scm.com/book/ja/v2)を参照してください。)  
-- <a href="https://nodejs.org/en/download/" target="_blank">Node.js/npm</a>が必要です。
-- <a href="https://app.code-check.io/settings/social" target="_blank">GitHubアカウントでcodecheckに連携します</a>  
-- 最後に `npm install --global codecheck mocha` を実行することで、CLIコマンドが利用できます。
+- <a href="https://git-scm.com/" target="_blank">Git</a> (Gitの使い方は[こちらを](https://git-scm.com/book/ja/v2)を参照してください。)
 
-## セットアップ
 
-![Githubでローカルにチャレンジをセットアップする方法](images/start_challenge_github.gif)
+## GitHubアカウントの連携
 
-- **必須条件を事前に終えてください**。
-- 開始したチャレンジのページから![GitHubで解くボタン](images/open_github.png)を選択します。
-- リポジトリ名を指定して、OKを選択します。
-- リンクをクリックしてGitHubの生成されたリポジトリページへ移動します。
-- 「Clone or Download」からリンクをコピーします。
-- CLIから`git clone {レポジトリのリンク}`で、ローカルにリポジトリを落としてきます。  
-- あとは好きな環境、エディタで編集して、問題を回答することができます。
+**必須条件を事前に終えてください**。
 
-## テストの実行
-- 問題が正しく実装できているかを確認するためにテストを実行します。
-CLIで`codecheck`コマンドを利用することで実行することができます。
-- コマンドを実行すると、テスト結果が以下のように標準出力されます:  
+まず、GitHubを活用して回答をする場合、codecheck内でGitHubアカウントの連携が必要です。  
+[こちらのページ](https://app.code-check.io/settings/social)から、GitHubアカウントの連携をおこないます。
+
+![ソーシャルアカウントの連携画面](images/github_integration_2.png)
+
+こちらの「接続」をクリックし、GitHubのアカウントの連携をしてください。  
+アカウントの連携が完了しましたら、再度こちらの画面をリロードしてください。  
+正しく接続が完了すると、"GitHubで解く"ボタンが選択できるようになります。
+
+
+## チャレンジをフォークしてみましょう
+
+Webエディタにてチャレンジを開いた後、エディタ左上のフォークボタンをクリックしてください。  
+![フォークボタン]](images/s7.png)
+
+ダイアログが立ち上がったら、リポジトリ名を入力して、作成を選択してみましょう。  
+![チャレンジのフォーク画面](images/fork_repo_modal_empty.png)
+
+すると、GitHubの生成されたリポジトリURLが表示されます。
+
+![レポジトリの作成に成功しました](images/fork_repo_modal_success.png)
+
+表示されたURLをクリックすると、生成されたGitHubのページにジャンプすることが出来ます。
+
+
+## ファイルの編集
+GitHubを使って回答の編集をしてみましょう。  
+ローカルにクローンをすれば、自分自身の好きな環境やエディタで自由に回答を編集することも可能です。  
+今回は、`answer.md`を編集してみましょう。  
+
+
+## 回答のPush
+回答を編集したら、編集内容をcodecheck上に保存します。  
+リモートのmasterにプッシュ(`git push origin master`)するだけで、回答内容をcodecheck上に保存する事ができます。  
+無事にリモートのmasterにプッシュが完了すると、codecheck側にもmasterの編集内容が保存されます。  
+masterにpushした後、チャレンジの詳細画面に戻ってください。  
+「保存」の下に表示されている時間が、pushをした時間に切り替わっていれば、正しく保存が完了しています。  
+
+![保存の確認](images/confirm_saved_2.png)
+
+
+## 保存されているかの確認
+保存が完了したら、正しく保存ができているのか、改めてWebエディタで確かめてみましょう。  
+Webエディタ画面を再度開いてみてください。(既に開いている場合はリロード)  
+編集したファイルが正しく保存され、更新されていれば完了です。  
+また、画面右上のSAVEボタンが押せなくなっており"READONLY Solving in GitHub"と表示されます。  
+**一度GitHubで受験をし、ローカルから保存をすると、Webエディタからは編集・保存ができなくなるので、ご注意下さい**
+
+また、Webエディタ上で`answer.md`を開いてみましょう。
+あなたがローカルで編集した内容が反映されたら成功です。  
+
+最後に、テスト実行ボタンを押してみましょう。
 ```
-$ codecheck
-codecheck version 0.5.3
-chai@2.3.0 node_modules/chai
-├── assertion-error@1.0.0
-└── deep-eql@0.1.3 (type-detect@0.1.1)
-Finish build: npm install (1966ms)
-////////////////
-テストファイルの実行結果
-////////////////
-codecheck: Finish with code 9
-codecheck: tests  : 9
-codecheck: success: 0
-codecheck: failure: 9
+codecheck: Finish 'npm install with code 0
+1..2
+ok 1 helloWorld Hello World!
+# tests 2
+# pass 2
+# fail 0
+codecheck: Finish with code 0
+codecheck: tests  : 2
+codecheck: success: 2
+codecheck: failure: 0
 ```
 
-## チャレンジの保存
-- 回答を編集したら、masterにコミットしします。（やり方は[gitのドキュメント](https://git-scm.com/book/ja/v2/Git-%E3%81%AE%E5%9F%BA%E6%9C%AC-%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%B8%E3%81%AE%E8%A8%98%E9%8C%B2)を参照してください。）
-- 次に`git push origin master`でリモートのmasterにプッシュしてください。
-- 無事プッシュが完了すると、codecheck側にもmasterの編集内容が同時保存されます。
-- プッシュ後に、試験の詳細画面でチャレンジが「保存」に切り替わったかを確認してください。
+が表示されたら正しく解答ができていることになります。  
+このように、GitHub上で受験・保存をした後も、codecheck上でテストを実行し、結果を確かめることが可能です。
 
-## 提出
-- 解答内容を提出するには、開始したチャレンジのページにある![提出](images/submit.png)ボタンを押してください。
-- 一度解答を提出すると、再度受験することはできませんので、ご注意ください。
+
+## チャレンジを提出しよう
+### answer.mdの表示とコメント
+codecheckでは、あなたが工夫して解答した点を`answer.md`にまとめることが出来ます。
+こちらのファイルを開いて、指定されている質問に回答してみましょう。  
+こちらのファイル内容は企業側が閲覧します。自由に自身のエンジニアスキルを表現してみてください。  
+
+### チャレンジの提出
+全ての解答内容の保存が確認できたら、解答を提出しましょう。
+チャレンジの詳細画面に戻り、画面右上の「提出（submit）」ボタンを押して「OK」をクリックすると、提出が完了します。  
+一度提出をすると、変更や再受験は出来ませんので、ご注意ください。
